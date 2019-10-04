@@ -1,10 +1,12 @@
 import React from 'react';
 import NavBar from '../../components/NavBar/NavBar';
 
-const MainPage = () => {
+const MainPage = (props) => {
   return (
     <div>
-      <NavBar />
+      <NavBar 
+        handleLogout={props.handleLogout}
+      />
       Main
     </div> 
   );
