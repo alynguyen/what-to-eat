@@ -5,8 +5,10 @@ const logger = require('morgan');
 
 const app = express();
 
-app.use(logger('dev'));
+require('dotenv').config();
+require('./config/database');
 
+app.use(logger('dev'));
 app.use(express.json());
 
 // Configure both serve-favicon & static middlewares
