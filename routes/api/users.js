@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../../models/user');
+// const User = require('../../models/user');
 const usersCtrl = require('../../controllers/users');
 
 /*---------- Public Routes ----------*/
@@ -9,7 +9,7 @@ router.post('/login', usersCtrl.login);
 
 
 /*---------- Protected Routes ----------*/
-router.use(require('../../config/auth'));
+// router.use(require('../../config/auth'));
 
 
 /*---------- Save for later maybe on something else ----------*/

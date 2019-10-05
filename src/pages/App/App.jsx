@@ -5,6 +5,7 @@ import { getAllYelp } from '../../services/yelp-api';
 import MainPage from '../MainPage/MainPage';
 import ShowPage from '../ShowPage/ShowPage';
 import SignUpPage from '../SignUpPage/SignUpPage';
+import LoginPage from '../LoginPage/LoginPage';
 import NavBar from '../../components/NavBar/NavBar';
 import userService from '../../utils/userService';
 
@@ -17,10 +18,10 @@ export class App extends Component {
     };
   }
 
-  async componentDidMount() {
-    const {results} = await getAllYelp();
-    console.log(results);
-  }
+  // async componentDidMount() {
+  //   const {results} = await getAllYelp();
+  //   console.log(results);
+  // }
 
   handleLogout = () => {
     userService.logout();
