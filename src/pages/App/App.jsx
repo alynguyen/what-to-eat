@@ -8,20 +8,29 @@ import SignUpPage from '../SignUpPage/SignUpPage';
 import LoginPage from '../LoginPage/LoginPage';
 import NavBar from '../../components/NavBar/NavBar';
 import userService from '../../utils/userService';
+import { getCurrentLatLng } from '../../services/location';
+
 
 export class App extends Component {
 
   constructor() {
     super();
     this.state = {
+      lat: null,
+      lng: null,
       user: userService.getUser()
     };
   }
 
-  // async componentDidMount() {
-  //   const {results} = await getAllYelp();
-  //   console.log(results);
-  // }
+  async componentDidMount() {
+    const {results} = await getAllYelp();
+    const {lat, lng} = await getCurrentLatLng();
+    this.setState({
+      lat,
+      lng
+    })
+    console.log(results);
+  }
 
   handleLogout = () => {
     userService.logout();
