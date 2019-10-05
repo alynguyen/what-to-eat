@@ -6,6 +6,7 @@ const MainPage = (props) => {
     <div>
       <NavBar 
         handleLogout={props.handleLogout}
+        user={props.user}
       />
       Main
     </div> 
