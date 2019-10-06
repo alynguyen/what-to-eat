@@ -3,11 +3,10 @@ const router = express.Router();
 const yelp = require('yelp-fusion');
 const client = yelp.client(process.env.API_KEY);
 
-router.get('/search',  (req, res) => {
-  client.search({
-    params: req.body
-  }).then(response => {
-    console.log(response.jsonBody);
+router.post('/search',  (req, res) => {
+  console.log(req.body);
+  client.search(req.body).then(res => {
+    console.log(res.jsonBody);
   }).catch(e => {
     console.log(e);
   });

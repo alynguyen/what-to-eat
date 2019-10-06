@@ -1,16 +1,17 @@
 
 export function getAllYelp(lat, lng) {
+  console.log(lat, lng)
   return fetch(
     '/api/yelp/search', {
-      method: 'GET',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      params: {
+      body: JSON.stringify({
         latitude: lat,
-        longtitude: lng
-      }
+        longitude: lng
+      })
     })
     .then((res) => console.log(res.json()))
 }

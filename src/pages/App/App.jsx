@@ -6,7 +6,6 @@ import MainPage from '../MainPage/MainPage';
 import ShowPage from '../ShowPage/ShowPage';
 import SignUpPage from '../SignUpPage/SignUpPage';
 import LoginPage from '../LoginPage/LoginPage';
-import NavBar from '../../components/NavBar/NavBar';
 import userService from '../../utils/userService';
 import { getCurrentLatLng } from '../../services/location';
 
@@ -51,6 +50,7 @@ export class App extends Component {
         <Route exact path='/' render={() =>
           <MainPage 
             handleLogout={this.handleLogout}
+            handleSearch={this.handleSearch}
             user={this.state.user}
           />
         } />
