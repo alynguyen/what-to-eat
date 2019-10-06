@@ -15,8 +15,8 @@ export class App extends Component {
   constructor() {
     super();
     this.state = {
-      lat: null,
-      lng: null,
+      lat: 37.9552238,
+      lng: -121.78748619999999,
       results: [],
       user: userService.getUser()
     };
@@ -24,9 +24,9 @@ export class App extends Component {
 
   async componentDidMount() {
     const {lat, lng} = await getCurrentLatLng();
-    const results =  getAllYelp(lat, lng);
-    console.log(lat, lng, results);
-    this.setState({
+    const results =  await getAllYelp(lat, lng);
+    console.log(results);
+    await this.setState({
       lat,
       lng,
       results: results
