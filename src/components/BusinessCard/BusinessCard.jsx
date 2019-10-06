@@ -3,7 +3,7 @@ import React from 'react';
 const BusinessCard = (props) => {
   return (
     <div>
-      Name: {props.name}
+      {props.name}
     </div>
   );
 }

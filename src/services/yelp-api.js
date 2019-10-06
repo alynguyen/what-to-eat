@@ -10,8 +10,8 @@ export function getAllYelp(lat, lng) {
       body: JSON.stringify({
         latitude: lat,
         longitude: lng,
-        term: 'food',
-        radius: 10000
+        term: 'food, restaurants',
+        radius: 2500
       })
     })
     .then((res) => res.json());

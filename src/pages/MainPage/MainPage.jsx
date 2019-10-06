@@ -13,12 +13,12 @@ const MainPage = (props) => {
       <SearchBar 
         handleSearch={props.handleSearch}
       />
-      {/* {props.results.map((results, idx) => (
+      {props.results.map((results, idx) => (
         <BusinessCard
           key={idx}
           name={results.name}
         />
-      ))} */}
+      ))}
     </div> 
   );
 }
