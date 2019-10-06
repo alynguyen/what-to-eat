@@ -8,8 +8,9 @@ const SearchBar = (props) => {
       />
       <button 
         onClick={() => props.handleSearch()}
-        value='Search'
-      />
+      >
+        Search
+      </button>
     </div>
   );
 }

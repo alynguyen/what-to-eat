@@ -17,21 +17,24 @@ export class App extends Component {
     this.state = {
       lat: null,
       lng: null,
+      results: [],
       user: userService.getUser()
     };
   }
 
   async componentDidMount() {
     const {lat, lng} = await getCurrentLatLng();
+    const results =  getAllYelp(lat, lng);
+    console.log(lat, lng, results);
     this.setState({
       lat,
-      lng
+      lng,
+      results: results
     })
   }
   
   handleSearch = () => {
-    const {results} = getAllYelp(this.state.lat, this.state.lng);
-    console.log(results);
+    // this.setState({results: getAllYelp(this.lat, this.lng)})
   }
 
   handleLogout = () => {
@@ -52,6 +55,7 @@ export class App extends Component {
             handleLogout={this.handleLogout}
             handleSearch={this.handleSearch}
             user={this.state.user}
+            results={this.state.results}
           />
         } />
         <Route exact path='/show' render={() =>
@@ -76,3 +80,4 @@ export class App extends Component {
 }
 
 export default App;
+
