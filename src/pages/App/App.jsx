@@ -23,12 +23,15 @@ export class App extends Component {
   }
 
   async componentDidMount() {
-    const {results} = await getAllYelp();
     const {lat, lng} = await getCurrentLatLng();
     this.setState({
       lat,
       lng
     })
+  }
+  
+  handleSearch = () => {
+    const {results} = getAllYelp(this.state.lat, this.state.lng);
     console.log(results);
   }
 
