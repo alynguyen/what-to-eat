@@ -8,6 +8,7 @@ import SignUpPage from '../SignUpPage/SignUpPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import { getCurrentLatLng } from '../../services/location';
+import 'react-bulma-components/dist/react-bulma-components.min.css';
 
 
 export class App extends Component {
@@ -15,8 +16,8 @@ export class App extends Component {
   constructor() {
     super();
     this.state = {
-      lat: 37.9552238,
-      lng: -121.78748619999999,
+      lat: null,
+      lng: null,
       results: [],
       user: userService.getUser()
     };

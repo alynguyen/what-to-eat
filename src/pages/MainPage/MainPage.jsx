@@ -1,15 +1,21 @@
 import React from 'react';
-import NavBar from '../../components/NavBar/NavBar';
 import SearchBar from '../../components/SearchBar/SearchBar';
+import Navbar from '../../components/Navbar/Navbar';
 import BusinessCard from '../../components/BusinessCard/BusinessCard';
+import 'react-bulma-components/dist/react-bulma-components.min.css';
+// import { Navbar } from 'react-bulma-components';
 
 const MainPage = (props) => {
   return (
     <div>
-      <NavBar 
+      <Navbar 
         handleLogout={props.handleLogout}
         user={props.user}
       />
+      {/* <NavBar 
+        handleLogout={props.handleLogout}
+        user={props.user}
+      /> */}
       <SearchBar 
         handleSearch={props.handleSearch}
       />
