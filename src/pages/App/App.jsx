@@ -52,18 +52,26 @@ export class App extends Component {
       <div>
         <Switch>
         <Route exact path='/' render={() =>
+          this.state.results.length
+          ? 
           <MainPage 
             handleLogout={this.handleLogout}
             handleSearch={this.handleSearch}
             user={this.state.user}
             results={this.state.results}
           />
+          :
+          'Loading...'
         } />
         <Route exact path='/:id' render={ props =>
+          this.state.results.length
+          ?
           <ShowPage 
           {...props}
           data={ this.state.results[props.match.params.id] }
           />
+          :
+          'Loading...'
         } />
         <Route exact path='/login' render={({ history }) => 
           <LoginPage

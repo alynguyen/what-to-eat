@@ -8,6 +8,7 @@ import { Columns } from 'react-bulma-components';
 import './MainPage.css'
 
 const MainPage = (props) => {
+
   return (
     <div className="container">
       <Navbar 
