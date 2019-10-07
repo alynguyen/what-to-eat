@@ -59,8 +59,11 @@ export class App extends Component {
             results={this.state.results}
           />
         } />
-        <Route exact path='/show' render={() =>
-          <ShowPage />
+        <Route exact path='/:id' render={ props =>
+          <ShowPage 
+          {...props}
+          data={ this.state.results[props.match.params.id] }
+          />
         } />
         <Route exact path='/login' render={({ history }) => 
           <LoginPage

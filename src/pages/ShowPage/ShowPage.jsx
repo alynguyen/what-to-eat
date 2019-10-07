@@ -1,11 +1,14 @@
 import React from 'react';
-// import Navbar from '../../components/Navbar/Navbar';
+import Navbar from '../../components/Navbar/Navbar';
 
 
-const Show = () => {
+const Show = (props) => {
   return (
-    <div>
-      Show
+    <div className="container">
+      <Navbar 
+        handleLogout={props.handleLogout}
+        user={props.user}
+        />
     </div>
   );
 }

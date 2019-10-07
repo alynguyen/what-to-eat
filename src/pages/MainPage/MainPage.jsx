@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import Navbar from '../../components/Navbar/Navbar';
 import BusinessCard from '../../components/BusinessCard/BusinessCard';
@@ -19,7 +20,8 @@ const MainPage = (props) => {
       <Columns>
       {props.results.map((results, idx) => (
         <BusinessCard
-        key={idx}
+        idx={idx}
+        id={results.id}
         name={results.name}
         image={results.image_url}
         location={results.location.display_address[0]}

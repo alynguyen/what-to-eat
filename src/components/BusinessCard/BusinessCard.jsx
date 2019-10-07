@@ -1,14 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card, Columns } from 'react-bulma-components';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import './BusinessCard.css';
 
 
 const BusinessCard = (props) => {
+  console.log(props.idx, props.id)
   return (
       <Card
         className="column is-one-quarter"
       >
+        <Link to={`/${props.idx}`}>
         <div className="card-image">
           <figure className="image is-4by3">
             <img src={props.image} alt={props.name} />
@@ -22,6 +25,7 @@ const BusinessCard = (props) => {
             <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time> */}
           </div>
         </div>
+        </Link>
       </Card>
   );
 }
