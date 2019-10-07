@@ -12,10 +12,6 @@ const MainPage = (props) => {
         handleLogout={props.handleLogout}
         user={props.user}
       />
-      {/* <NavBar 
-        handleLogout={props.handleLogout}
-        user={props.user}
-      /> */}
       <SearchBar 
         handleSearch={props.handleSearch}
       />
