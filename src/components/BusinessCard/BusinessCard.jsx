@@ -6,7 +6,6 @@ import './BusinessCard.css';
 
 
 const BusinessCard = (props) => {
-  console.log(props.idx, props.id)
   return (
       <Card
         className="column is-one-quarter"
@@ -21,8 +20,6 @@ const BusinessCard = (props) => {
           <div className="content">
             <h3 className="card-header-title">{props.name}</h3>
             <p>{props.location}</p>
-            {/* <a href="#">#css</a> <a href="#">#responsive</a>
-            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time> */}
           </div>
         </div>
         </Link>
