@@ -11,7 +11,6 @@ router.post('/search', async (req, res) => {
 
 router.get('/:id/reviews', async (req, res) => {
     const results = await client.reviews(req.params.id);
-    console.log(results.jsonBody.reviews)
     return res.json(results.jsonBody.reviews);
 })
 
