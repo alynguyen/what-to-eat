@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './BusinessCard.css';
-import { Container, Card, Row, Col } from 'react-bootstrap';
+import { Container, Card, CardDeck } from 'react-bootstrap';
 
 
 const BusinessCard = (props) => {
   return (
-
     <Link to={`/${props.idx}`}>
     <Card style={{ width: '18rem'}}>
       <Card.Img variant="top" src={props.image} />

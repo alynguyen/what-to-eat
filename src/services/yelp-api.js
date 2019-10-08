@@ -17,3 +17,8 @@ export function getAllYelp(lat, lng) {
     })
     .then((res) => res.json());
 }
+
+export function getReviews(id) {
+  return fetch(`api/yelp/${id}/reviews`)
+    .then((res) => res.json());
+}

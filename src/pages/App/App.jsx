@@ -26,7 +26,6 @@ export class App extends Component {
   async componentDidMount() {
     const {lat, lng} = await getCurrentLatLng();
     const results =  await getAllYelp(lat, lng);
-    console.log(results);
     await this.setState({
       lat,
       lng,

@@ -2,21 +2,25 @@ import React, { Component } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import './ShowPage.css'
 import GoogleMap from '../../components/GoogleMap/GoogleMap';
+import Reviews from '../../components/Reviews/Reviews';
 import { Card } from 'react-bootstrap';
+import { getReviews } from '../../services/yelp-api';
 
 
 class Show extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentId: this.props.data.id,
       reviews: []
     }
   }
 
-  // componentDidMount() {
-  //   this.setState({currentId: this.props.data.id })
-  // }
+  async componentDidMount() {
+    const reviews = await getReviews(this.props.data.id);
+    console.log(reviews);
+    this.setState({reviews: reviews})
+  }
+
 
   render() {
     return (
@@ -35,6 +39,11 @@ class Show extends Component {
       <Card style={{ width: '20rem', height: '20rem'}}>
         <GoogleMap 
           cords={this.props.data.coordinates}
+          />
+        </Card>
+      <Card style={{ width: '70rem'}}>
+        <Reviews 
+          reviews={this.state.reviews}
           />
         </Card>
         </div>

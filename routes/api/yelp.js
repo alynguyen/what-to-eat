@@ -1,3 +1,4 @@
+
 const express = require('express');
 const router = express.Router();
 const yelp = require('yelp-fusion');
@@ -8,9 +9,11 @@ router.post('/search', async (req, res) => {
     return res.json(results.jsonBody.businesses);
 })
 
-// router.get('/:id', (req, res) => {
-//     return 
-// })
+router.get('/:id/reviews', async (req, res) => {
+    const results = await client.reviews(req.params.id);
+    console.log(results.jsonBody.reviews)
+    return res.json(results.jsonBody.reviews);
+})
 
 module.exports = router;
 
