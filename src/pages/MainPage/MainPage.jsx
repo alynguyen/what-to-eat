@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import Navbar from '../../components/Navbar/Navbar';
 import BusinessCard from '../../components/BusinessCard/BusinessCard';
-import 'react-bulma-components/dist/react-bulma-components.min.css';
-import { Columns } from 'react-bulma-components';
 import './MainPage.css'
 
 const MainPage = (props) => {
@@ -18,7 +16,7 @@ const MainPage = (props) => {
       <SearchBar 
         handleSearch={props.handleSearch}
         />
-      <Columns>
+      {/* <Columns> */}
       {props.results.map((results, idx) => (
         <BusinessCard
         idx={idx}
@@ -28,7 +26,7 @@ const MainPage = (props) => {
         location={results.location.display_address[0]}
         />
         ))}
-      </Columns>
+      {/* </Columns> */}
     </div> 
   );
 }

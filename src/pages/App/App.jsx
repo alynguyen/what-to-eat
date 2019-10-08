@@ -8,8 +8,7 @@ import SignUpPage from '../SignUpPage/SignUpPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import { getCurrentLatLng } from '../../services/location';
-import 'react-bulma-components/dist/react-bulma-components.min.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export class App extends Component {
 
