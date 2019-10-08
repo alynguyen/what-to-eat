@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
-import { Card, Section } from 'react-bulma-components';
+import { Columns, Card, Section } from 'react-bulma-components';
 import './ShowPage.css'
 import GoogleMap from '../../components/GoogleMap/GoogleMap';
 import GoogleMapReact from 'google-map-react';
@@ -9,15 +9,17 @@ import GoogleMapReact from 'google-map-react';
 
 const Show = (props) => {
   return (
-    <div>
+    <div className="container">
       <Navbar 
         handleLogout={props.handleLogout}
         user={props.data.name}
         />
-      <Section>
       <h1 className="title">
         {props.data.name}
       </h1>
+      <Columns>
+      <Columns.Column size="is-3">
+
       <div className="card">
         <div className="card-header">
           </div>
@@ -27,10 +29,14 @@ const Show = (props) => {
           </figure>
         </div>
         </div>
-        </Section>
+        <Card>
+
         <GoogleMap 
           cords={props.data.coordinates}
-        />
+          />
+        </Card>
+        </Columns.Column>
+        </Columns>
       </div>
   );
 }
