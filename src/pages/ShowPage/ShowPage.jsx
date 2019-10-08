@@ -1,10 +1,8 @@
 import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
-import 'react-bulma-components/dist/react-bulma-components.min.css';
-import { Columns, Card, Section } from 'react-bulma-components';
 import './ShowPage.css'
 import GoogleMap from '../../components/GoogleMap/GoogleMap';
-import GoogleMapReact from 'google-map-react';
+import { Card } from 'react-bootstrap';
 
 
 const Show = (props) => {
@@ -17,26 +15,16 @@ const Show = (props) => {
       <h1 className="title">
         {props.data.name}
       </h1>
-      <Columns>
-      <Columns.Column size="is-3">
-
-      <div className="card">
-        <div className="card-header">
-          </div>
-        <div className="card-image">
-          <figure className="image is-4by3">
-            <img src={props.data.image_url} alt={props.name} />
-          </figure>
-        </div>
-        </div>
-        <Card>
-
+    <div className="flex-row">
+      <Card style={{ width: '20rem' }}>
+        <Card.Img variant="top" src={props.data.image_url} />
+        </Card>
+      <Card style={{ width: '20rem', height: '20rem'}}>
         <GoogleMap 
           cords={props.data.coordinates}
           />
         </Card>
-        </Columns.Column>
-        </Columns>
+        </div>
       </div>
   );
 }

@@ -4,6 +4,7 @@ import './App.css';
 import { getAllYelp } from '../../services/yelp-api';
 import MainPage from '../MainPage/MainPage';
 import ShowPage from '../ShowPage/ShowPage';
+import LoadPage from '../LoadPage/LoadPage';
 import SignUpPage from '../SignUpPage/SignUpPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
@@ -60,7 +61,9 @@ export class App extends Component {
             results={this.state.results}
           />
           :
-          'Loading...'
+          <LoadPage
+            user={this.state.user}
+          />
         } />
         <Route exact path='/:id' render={ props =>
           this.state.results.length
@@ -70,7 +73,9 @@ export class App extends Component {
           data={ this.state.results[props.match.params.id] }
           />
           :
-          'Loading...'
+          <LoadPage
+            user={this.state.user}
+          />
         } />
         <Route exact path='/login' render={({ history }) => 
           <LoginPage
