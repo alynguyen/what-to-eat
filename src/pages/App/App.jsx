@@ -51,6 +51,18 @@ export class App extends Component {
     return (
       <div>
         <Switch>
+        <Route exact path='/login' render={({ history }) => 
+          <LoginPage
+            history={history}
+            handleSignupOrLogin={this.handleSignupOrLogin}
+          />
+          }/>
+        <Route exact path='/signup' render={({ history }) => 
+          <SignUpPage
+            handleSignupOrLogin={this.handleSignupOrLogin}
+            history={history}
+          />
+          }/>
         <Route exact path='/' render={() =>
           this.state.results.length
           ? 
@@ -64,31 +76,20 @@ export class App extends Component {
           <LoadPage
             user={this.state.user}
           />
-        } />
+          }/>
         <Route exact path='/:id' render={ props =>
           this.state.results.length
           ?
           <ShowPage 
           {...props}
           data={ this.state.results[props.match.params.id] }
+          user={this.state.user}
           />
           :
           <LoadPage
             user={this.state.user}
           />
-        } />
-        <Route exact path='/login' render={({ history }) => 
-          <LoginPage
-            history={history}
-            handleSignupOrLogin={this.handleSignupOrLogin}
-          />
-        }/>
-        <Route exact path='/signup' render={({ history }) => 
-          <SignUpPage
-            handleSignupOrLogin={this.handleSignupOrLogin}
-            history={history}
-          />
-        }/>
+          }/>
         </Switch>
       </div>
     );
