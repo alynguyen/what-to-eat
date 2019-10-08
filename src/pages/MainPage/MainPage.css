@@ -1,4 +1,8 @@
-.columns {
-  justify-content: space-between;;
-  margin-top: 5vh;
+.card {
+ margin: 10px 15px;
+}
+
+.flex {
+  display: flex;
+  flex-flow: row wrap;
 }

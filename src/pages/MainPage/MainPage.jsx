@@ -4,19 +4,22 @@ import SearchBar from '../../components/SearchBar/SearchBar';
 import Navbar from '../../components/Navbar/Navbar';
 import BusinessCard from '../../components/BusinessCard/BusinessCard';
 import './MainPage.css'
+import { Container } from 'react-bootstrap';
 
 const MainPage = (props) => {
 
   return (
-    <div className="container">
-      <Navbar 
-        handleLogout={props.handleLogout}
-        user={props.user}
-        />
+    <Container>
+    
+    <Navbar 
+    handleLogout={props.handleLogout}
+    user={props.user}
+    />
       <SearchBar 
         handleSearch={props.handleSearch}
         />
-      {/* <Columns> */}
+      <Container className="flex">
+
       {props.results.map((results, idx) => (
         <BusinessCard
         idx={idx}
@@ -26,8 +29,8 @@ const MainPage = (props) => {
         location={results.location.display_address[0]}
         />
         ))}
-      {/* </Columns> */}
-    </div> 
+      </Container>
+    </Container>
   );
 }
 

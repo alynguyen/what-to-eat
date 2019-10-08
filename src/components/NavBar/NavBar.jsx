@@ -1,67 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import 'react-bulma-components/dist/react-bulma-components.min.css';
+import { Navbar, Nav, Button } from 'react-bootstrap';
 
-
-const Navbar = (props) => {
+const NavBar = (props) => {
     let nav = props.user ?
-    <div className="navbar-end">
-      <div className="navbar-item">
-        <div className="buttons">
-          <div
-            className="button is-light"
-            onClick={props.handleLogout}
-            >
-            Log Out
-          </div>
-        </div>
-      </div>
-    </div>
+      <Button
+        variant="outline-primary"
+        onClick={props.handleLogout}
+      >
+        Log Out
+      </Button>
     :
-    <div className="navbar-end">
-      <div className="navbar-item">
-        <div className="buttons">
-          <Link to='/login'
-            className="button is-light"
-            >
+      <div>
+        <Link to='/login'>
+          <Button variant="primary-outline">
             Log In
-          </Link>
-          <Link to='/signup'
-            className="button is-primary"
-            >
-            Sign Up
-          </Link>
-        </div>
-      </div>
-    </div>
-  return (
-    <nav className="navbar" role="navigation" aria-label="main navigation">
-      <div className="navbar-brand">
-        <Link className="navbar-item" to='/'>
-         <img src="https://bulma.io/images/bulma-logo.png" alt="logo" width="112" height="28" />
+          </Button>
         </Link>
-        <Link to='' role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
+        <Link to='/signup'>
+          <Button>Sign Up</Button>
         </Link>
        </div>
-
-       <div id="navbarBasicExample" className="navbar-menu">
-        <div className="navbar-start">
-          <Link to='/' className="navbar-item">
+  return (
+    <Navbar bg="light" variant="light">
+      <Navbar.Brand href="/">What To Eat</Navbar.Brand>
+        <Nav className="mr-auto">
+          <Nav.Link to='/' className="navbar-item">
             Home
-          </Link>
-
-          <Link to='/show' className="navbar-item">
+          </Nav.Link>
+          <Nav.Link to='/show' className="navbar-item">
             Show
-          </Link>
-
-        </div>
+          </Nav.Link>
+        </Nav>
         {nav}
-      </div>
-    </nav>
+    </Navbar>
   );
 }
 
-export default Navbar;
+export default NavBar;

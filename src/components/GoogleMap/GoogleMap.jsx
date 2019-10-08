@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Card, Section } from 'react-bulma-components';
 import { Marker, Map, GoogleApiWrapper } from 'google-maps-react';
 import './GoogleMap.css'
  
