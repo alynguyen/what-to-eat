@@ -9,12 +9,20 @@ const BusinessCard = (props) => {
     <Link to={`/${props.idx}`} className="link">
     <Card style={{ width: '18rem'}}>
       <Card.Img variant="top" src={props.image} />
-      <Card.Body>
+      <Card.Body style={{ padding: '.5rem'}} className="BusinessCard-CardBody">
         <Card.Title>
-          <img src={props.stars[props.rating]} alt={props.rating} />
+          <div className="BusinessCard-StarsContainer">
+            <img src={props.stars[props.rating]} alt={props.rating} />
+            <small className="text-muted">{props.reviewCount} Reviews</small>
+          </div>
         </Card.Title>
-        <Card.Title>{props.name}</Card.Title>
-        <Card.Text>{props.location}</Card.Text>
+        <Card.Title>
+          <div className="BusinessCard-StarsContainer">
+            {props.name}
+            <small className="text-muted">{props.price}</small>
+          </div>
+        </Card.Title>
+        <Card.Text><i class="fas fa-map-marker-alt"></i>{props.location}</Card.Text>
       </Card.Body>
     </Card>
     </Link>

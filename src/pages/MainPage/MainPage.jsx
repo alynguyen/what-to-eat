@@ -27,8 +27,10 @@ const MainPage = (props) => {
             name={results.name}
             image={results.image_url}
             location={results.location.display_address[0]}
-            stars={props.stars}
             rating={results.rating}
+            reviewCount={results.review_count}
+            price={results.price}
+            stars={props.stars}
           />
           ))}
       </div>

@@ -18,7 +18,7 @@ const NavBar = (props) => {
           </Button>
         </Link>
         <Link to='/signup'>
-          <Button variant="danger">Sign Up</Button>
+          <Button variant="danger" bsClass="btn-custom">Sign Up</Button>
         </Link>
        </div>
   return (

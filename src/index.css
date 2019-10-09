@@ -25,3 +25,24 @@ code {
 *:focus {
   outline: none;
 }
+
+.fa-map-marker-alt {
+  color: #D32323;
+  margin-right: .5rem;
+}
+
+.button {
+  background-color: #D32323;
+  color: white;
+  border-radius: 5px;
+  height: 2rem;
+  padding: .375rem .75rem;
+  font-weight: 400;
+  line-height: 1.5;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.btn-custom {
+  background-color: #D32323;
+}

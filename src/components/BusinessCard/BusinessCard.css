@@ -1,5 +1,13 @@
 .card {
-  padding: 1vh;
+  /* padding: 1vh; */
   margin-bottom: 20px;
 }
 
+.BusinessCard-StarsContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.BusinessCard-CardBody {
+  padding: .5rem;
+}
