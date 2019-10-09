@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Button } from 'react-bootstrap';
+import './Navbar.css';
 
 const NavBar = (props) => {
     let nav = props.user ?
@@ -18,22 +19,24 @@ const NavBar = (props) => {
           </Button>
         </Link>
         <Link to='/signup'>
-          <Button variant="danger" bsClass="btn-custom">Sign Up</Button>
+          <Button variant="danger">Sign Up</Button>
         </Link>
        </div>
   return (
+    <div className="Navbar">
     <Navbar bg="light" variant="light">
       <Navbar.Brand href="/">What To Eat</Navbar.Brand>
         <Nav className="mr-auto">
           {/* <Nav.Link to='/' className="navbar-item">
             Home
-          </Nav.Link>
-          <Nav.Link to='/show' className="navbar-item">
+            </Nav.Link>
+            <Nav.Link to='/show' className="navbar-item">
             Show
           </Nav.Link> */}
         </Nav>
         {nav}
     </Navbar>
+    </div>
   );
 }
 

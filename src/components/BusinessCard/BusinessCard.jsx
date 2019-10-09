@@ -22,7 +22,19 @@ const BusinessCard = (props) => {
             <small className="text-muted">{props.price}</small>
           </div>
         </Card.Title>
-        <Card.Text><i class="fas fa-map-marker-alt"></i>{props.location}</Card.Text>
+        <Card.Text><i className="fas fa-map-marker-alt"></i>{props.location}</Card.Text>
+        <div className="BusinessCard-CatContainer">
+          {/* <Card.Text> */}
+            {props.cats.map((cat, idx) => (
+              <div 
+                key={idx}
+                className="App-Cat"
+              >
+                {cat.title}
+              </div>
+            ))}
+          {/* </Card.Text> */}
+        </div>
       </Card.Body>
     </Card>
     </Link>

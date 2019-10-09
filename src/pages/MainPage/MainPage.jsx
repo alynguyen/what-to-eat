@@ -31,6 +31,7 @@ const MainPage = (props) => {
             reviewCount={results.review_count}
             price={results.price}
             stars={props.stars}
+            cats={results.categories}
           />
           ))}
       </div>

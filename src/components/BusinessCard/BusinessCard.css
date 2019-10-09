@@ -4,10 +4,21 @@
 }
 
 .BusinessCard-StarsContainer {
+  font-family: 'Merriweather';
   display: flex;
   justify-content: space-between;
+  margin-top: .4em;
 }
 
 .BusinessCard-CardBody {
   padding: .5rem;
+}
+
+.BusinessCard-CatContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.text-muted {
+  font-size: .7em;
 }

@@ -9,6 +9,7 @@
 }
 
 .MainPage-Header {
+  font-family: 'Merriweather';
   background-image: url("/images/sushigrey.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
