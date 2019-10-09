@@ -11,6 +11,19 @@ import userService from '../../utils/userService';
 import { getCurrentLatLng } from '../../services/location';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const stars = {
+  0: 'images/stars/regular_0.png',
+  1: 'images/stars/regular_1.png',
+  1.5: 'images/stars/regular_1_half.png',
+  2: 'images/stars/regular_2.png',
+  2.5: 'images/stars/regular_2_half.png',
+  3: 'images/stars/regular_3.png',
+  3.5: 'images/stars/regular_3_half.png',
+  4: 'images/stars/regular_4.png',
+  4.5: 'images/stars/regular_4_half.png',
+  5: 'images/stars/regular_5.png',
+}
+
 export class App extends Component {
 
   constructor() {
@@ -70,6 +83,7 @@ export class App extends Component {
             handleSearch={this.handleSearch}
             user={this.state.user}
             results={this.state.results}
+            stars={stars}
           />
           :
           <LoadPage

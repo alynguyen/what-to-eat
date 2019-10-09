@@ -5,7 +5,7 @@ import { Navbar, Nav, Button } from 'react-bootstrap';
 const NavBar = (props) => {
     let nav = props.user ?
       <Button
-        variant="outline-primary"
+        variant="danger"
         onClick={props.handleLogout}
       >
         Log Out
@@ -18,19 +18,19 @@ const NavBar = (props) => {
           </Button>
         </Link>
         <Link to='/signup'>
-          <Button>Sign Up</Button>
+          <Button variant="danger">Sign Up</Button>
         </Link>
        </div>
   return (
     <Navbar bg="light" variant="light">
       <Navbar.Brand href="/">What To Eat</Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link to='/' className="navbar-item">
+          {/* <Nav.Link to='/' className="navbar-item">
             Home
           </Nav.Link>
           <Nav.Link to='/show' className="navbar-item">
             Show
-          </Nav.Link>
+          </Nav.Link> */}
         </Nav>
         {nav}
     </Navbar>

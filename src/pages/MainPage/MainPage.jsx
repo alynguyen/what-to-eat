@@ -15,10 +15,10 @@ const MainPage = (props) => {
         user={props.user}
       />
       <header className="MainPage-Header">
+      </header>
         <SearchBar 
           handleSearch={props.handleSearch}
         />
-      </header>
       <div className="flex">
         {props.results.map((results, idx) => (
           <BusinessCard
@@ -27,6 +27,8 @@ const MainPage = (props) => {
             name={results.name}
             image={results.image_url}
             location={results.location.display_address[0]}
+            stars={props.stars}
+            rating={results.rating}
           />
           ))}
       </div>
