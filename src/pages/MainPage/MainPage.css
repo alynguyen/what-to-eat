@@ -5,4 +5,31 @@
 .flex {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
 }
+
+.MainPage-Header {
+  background-image: url("/images/sushigrey.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  height: 25rem;
+}
+
+/* .MainPage-Container {
+  position: relative;
+  overflow: hidden;
+}
+.MainPage-Container h1 {
+  padding: 200px;
+  position: relative;
+  z-index: 2;
+} 
+.MainPage-Container img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.6;
+} */

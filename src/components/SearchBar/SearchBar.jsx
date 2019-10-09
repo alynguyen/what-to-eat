@@ -1,16 +1,19 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
+import './SearchBar.css';
 
 const SearchBar = (props) => {
   return (
-    <div>
+    <div className="SearchBar">
       <input 
+        className="SearchBar-Input"
         type='text'
       />
-      <button 
+      <Button 
         onClick={() => props.handleSearch()}
       >
         Search
-      </button>
+      </Button>
     </div>
   );
 }

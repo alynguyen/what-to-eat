@@ -1,0 +1,11 @@
+.SearchBar {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.SearchBar-Input {
+  margin-right: 2rem;
+  vertical-align: middle;
+  height: 3rem;
+  width: 25rem;
+}

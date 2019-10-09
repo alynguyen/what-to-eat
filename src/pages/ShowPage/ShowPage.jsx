@@ -24,7 +24,7 @@ class Show extends Component {
 
   render() {
     return (
-      <div className="container">
+      <>
       <Navbar 
         handleLogout={this.props.handleLogout}
         user={this.props.user}
@@ -33,21 +33,21 @@ class Show extends Component {
         {this.props.data.name}
       </h1>
       <div className="flex-row">
-      <Card style={{ width: '20rem' }}>
-        <Card.Img variant="top" src={this.props.data.image_url} />
-        </Card>
-      <Card style={{ width: '20rem', height: '20rem'}}>
-        <GoogleMap 
-          cords={this.props.data.coordinates}
-          />
-        </Card>
-      <Card style={{ width: '70rem'}}>
-        <Reviews 
-          reviews={this.state.reviews}
-          />
-        </Card>
+        <Card style={{ width: '20rem' }}>
+          <Card.Img variant="top" src={this.props.data.image_url} />
+          </Card>
+        <Card style={{ width: '20rem', height: '20rem'}}>
+          <GoogleMap 
+            cords={this.props.data.coordinates}
+            />
+          </Card>
+        <Card style={{ width: '70rem'}}>
+          <Reviews 
+            reviews={this.state.reviews}
+            />
+          </Card>
         </div>
-      </div>
+      </>
     );
   }
 }
