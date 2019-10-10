@@ -1,5 +1,72 @@
-.flex-row {
+.CardPage{
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  font-family: "Merriweather"
+}
+
+.ShowPage-CardDetails {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.ShowPage-CardTitle {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.ShowPage-TextAddress {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+}
+
+.ShowPage-Marker {
+  margin-right: 1em;
+  margin-bottom: .3em;
+}
+
+.ShowPage-Img {
+  max-width: 20rem;
+  max-height: 20rem;
+  width: 100%;
+  height: 100%;
+}
+
+.ShowPage-CatContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+}
+
+.ShowPage-Cat {
+  font-size: 1em;
+  list-style: none;
+  padding-top: .2em;
+  margin-left: .2em;
+}
+
+.ShowPage-StarsContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: .5em;
+}
+
+.ShowPage-TextPrice {
+  margin-left: .2em;
+  margin-top: .4em;
+  color: grey;
+}
+
+.ShowPage-TextMuted {
+  font-size: 1em;
+}
+
+.ShowPage-Map {
+  padding: .5em;
+}
+
+.ShowPage-Img {
+  padding: .5em;
 }

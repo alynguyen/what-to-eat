@@ -30,3 +30,28 @@ code {
   color: #D32323;
   margin-right: .5rem;
 }
+
+.btn-custom {
+  background-color: #D32323;
+  color: white;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card {
+  margin-bottom: 4em;
+  -webkit-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.15);
+  -moz-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.15);
+  box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.15);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  -webkit-box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
+  -moz-box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
+  box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
+}

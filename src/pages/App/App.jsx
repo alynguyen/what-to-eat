@@ -12,16 +12,29 @@ import { getCurrentLatLng } from '../../services/location';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const stars = {
-  0: 'images/stars/regular_0.png',
-  1: 'images/stars/regular_1.png',
-  1.5: 'images/stars/regular_1_half.png',
-  2: 'images/stars/regular_2.png',
-  2.5: 'images/stars/regular_2_half.png',
-  3: 'images/stars/regular_3.png',
-  3.5: 'images/stars/regular_3_half.png',
-  4: 'images/stars/regular_4.png',
-  4.5: 'images/stars/regular_4_half.png',
-  5: 'images/stars/regular_5.png',
+  0: 'images/stars/regular/regular_0.png',
+  1: 'images/stars/regular/regular_1.png',
+  1.5: 'images/stars/regular/regular_1_half.png',
+  2: 'images/stars/regular/regular_2.png',
+  2.5: 'images/stars/regular/regular_2_half.png',
+  3: 'images/stars/regular/regular_3.png',
+  3.5: 'images/stars/regular/regular_3_half.png',
+  4: 'images/stars/regular/regular_4.png',
+  4.5: 'images/stars/regular/regular_4_half.png',
+  5: 'images/stars/regular/regular_5.png',
+}
+
+const stars_lrg = {
+  0: 'images/stars/large/large_0.png',
+  1: 'images/stars/large/large_1.png',
+  1.5: 'images/stars/large/large_1_half.png',
+  2: 'images/stars/large/large_2.png',
+  2.5: 'images/stars/large/large_2_half.png',
+  3: 'images/stars/large/large_3.png',
+  3.5: 'images/stars/large/large_3_half.png',
+  4: 'images/stars/large/large_4.png',
+  4.5: 'images/stars/large/large_4_half.png',
+  5: 'images/stars/large/large_5.png',
 }
 
 export class App extends Component {
@@ -94,9 +107,10 @@ export class App extends Component {
           this.state.results.length
           ?
           <ShowPage 
-          {...props}
-          data={ this.state.results[props.match.params.id] }
-          user={this.state.user}
+            {...props}
+            data={ this.state.results[props.match.params.id] }
+            user={this.state.user}
+            stars={stars_lrg}
           />
           :
           <LoadPage

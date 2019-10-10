@@ -8,7 +8,7 @@ const BusinessCard = (props) => {
   return (
     <Link to={`/${props.idx}`} className="link">
     <Card style={{ width: '18rem'}}>
-      <Card.Img variant="top" src={props.image} />
+      <Card.Img className="BusinessCard-Img" variant="top" src={props.image} />
       <Card.Body style={{ padding: '.5rem'}} className="BusinessCard-CardBody">
         <Card.Title>
           <div className="BusinessCard-StarsContainer">
@@ -24,16 +24,17 @@ const BusinessCard = (props) => {
         </Card.Title>
         <Card.Text><i className="fas fa-map-marker-alt"></i>{props.location}</Card.Text>
         <div className="BusinessCard-CatContainer">
-          {/* <Card.Text> */}
-            {props.cats.map((cat, idx) => (
-              <div 
-                key={idx}
-                className="App-Cat"
-              >
-                {cat.title}
-              </div>
-            ))}
-          {/* </Card.Text> */}
+          {props.cats.map((cat, idx) => (
+            <div 
+              key={idx}
+              className="App-Cat"
+            >
+              {cat.title}
+            </div>
+          ))}
+        </div>
+        <div className="BusinessCard-Logo">
+          <img style={{width: "4em"}} src="images/yelp.png" alt="Yelp"/>
         </div>
       </Card.Body>
     </Card>
