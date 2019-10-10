@@ -5,7 +5,6 @@ import searchPref from '../../services/searchPref';
 import userService from '../../services/userService';
 
 class SearchBar extends Component {
-
   state = {
     preference: '',
     userPreferences: [null],
@@ -19,6 +18,7 @@ class SearchBar extends Component {
         this.setState({
           userPreferences: pref
         })
+      console.log('pref', pref)
     } catch(err) {
       console.log(err);
     }
@@ -36,7 +36,9 @@ class SearchBar extends Component {
      searchPref.create(this.state)
       this.setState({
         preference: '',
-      })
+      }, 
+      () => this.handleGetPref()
+      )
       this.handleGetPref();
     } catch (err) {
       console.log(err);
