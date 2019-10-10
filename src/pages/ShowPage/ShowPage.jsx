@@ -31,8 +31,7 @@ class Show extends Component {
         />
       <div className="CardPage">
         <Card className="ShowPage-CardDetails" style={{ width: '20rem' }}>
-          <div className="ShowPage-CardTitle">{this.props.data.name}
-          </div>
+          <div className="ShowPage-CardTitle">{this.props.data.name}</div>
           <small className="ShowPage-TextPrice">{this.props.data.price}</small>
           <div className="BusinessCard-StarsContainer">
             <img src={this.props.stars[this.props.data.rating]} alt={this.props.data.rating} />
@@ -47,13 +46,16 @@ class Show extends Component {
                 {cat.title}
               </li>
             ))}
-        </div>
+          </div>
           <div className="flex-row">
             <i className="fas fa-map-marker-alt ShowPage-Marker"></i>
             <div className="ShowPage-TextAddress">
               <span>{this.props.data.location.display_address[0]}</span>
               <span>{this.props.data.location.display_address[1]}</span>
             </div>
+          </div>
+          <div className="ShowPage-Logo">
+            <img style={{width: "4em"}} src="images/yelp.png" alt="Yelp"/>
           </div>
         </Card>
         <Card style={{ width: '20rem' }}>
@@ -66,9 +68,10 @@ class Show extends Component {
             cords={this.props.data.coordinates}
             />
           </Card>
-        <Card style={{ width: '70rem'}}>
+        <Card style={{ width: '64rem'}}>
           <Reviews 
             reviews={this.state.reviews}
+            stars={this.props.starsRg}
             />
           </Card>
         </div>

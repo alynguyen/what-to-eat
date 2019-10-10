@@ -1,0 +1,22 @@
+.Reviews {
+  padding: 1em;
+  line-height: 1.5;
+}
+
+.Reviews h1 {
+  margin-bottom: .5em;
+}
+
+.Reviews-Img {
+  margin-bottom: .5em;
+}
+
+.Reviews-Name {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1.8em;
+}
+
+.media-body p {
+  margin-right: 1em;
+}

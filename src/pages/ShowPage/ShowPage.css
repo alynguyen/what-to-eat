@@ -70,3 +70,9 @@
 .ShowPage-Img {
   padding: .5em;
 }
+
+.ShowPage-Logo {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2em;
+}

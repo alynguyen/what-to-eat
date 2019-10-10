@@ -111,6 +111,7 @@ export class App extends Component {
             data={ this.state.results[props.match.params.id] }
             user={this.state.user}
             stars={stars_lrg}
+            starsRg={stars}
           />
           :
           <LoadPage
