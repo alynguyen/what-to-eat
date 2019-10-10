@@ -12,6 +12,18 @@ class SearchBar extends Component {
     user: this.props.user
   };
 
+  async handleGetPref() {
+    try {
+      console.log('searchbar', this.state.user._id)
+      let pref = await searchPref.getPref(this.state.user._id)
+        this.setState({
+          userPreferences: pref
+        })
+    } catch(err) {
+      console.log(err);
+    }
+  }
+
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
@@ -23,9 +35,9 @@ class SearchBar extends Component {
     try {
      searchPref.create(this.state)
       this.setState({
-        preference: ''
+        preference: '',
       })
-      this.props.handleSignupOrLogin()
+      this.handleGetPref();
     } catch (err) {
       console.log(err);
     }
