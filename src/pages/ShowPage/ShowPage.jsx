@@ -55,7 +55,7 @@ class Show extends Component {
             </div>
           </div>
           <div className="ShowPage-Logo">
-            <img style={{width: "4em"}} src="images/yelp.png" alt="Yelp"/>
+            <img style={{height: "2em"}} src="images/yelp.png" alt="Yelp"/>
           </div>
         </Card>
         <Card style={{ width: '20rem' }}>

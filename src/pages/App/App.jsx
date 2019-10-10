@@ -7,7 +7,7 @@ import ShowPage from '../ShowPage/ShowPage';
 import LoadPage from '../LoadPage/LoadPage';
 import SignUpPage from '../SignUpPage/SignUpPage';
 import LoginPage from '../LoginPage/LoginPage';
-import userService from '../../utils/userService';
+import userService from '../../services/userService';
 import { getCurrentLatLng } from '../../services/location';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -52,7 +52,7 @@ export class App extends Component {
   async componentDidMount() {
     const {lat, lng} = await getCurrentLatLng();
     const results =  await getAllYelp(lat, lng);
-    await this.setState({
+    this.setState({
       lat,
       lng,
       results: results
@@ -92,6 +92,7 @@ export class App extends Component {
           this.state.results.length
           ? 
           <MainPage 
+            handleSignupOrLogin={this.handleSignupOrLogin}
             handleLogout={this.handleLogout}
             handleSearch={this.handleSearch}
             user={this.state.user}

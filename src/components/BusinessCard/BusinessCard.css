@@ -1,4 +1,5 @@
 
+
 .BusinessCard-StarsContainer {
   font-family: 'Merriweather';
   display: flex;
@@ -12,7 +13,7 @@
 
 .BusinessCard-CatContainer {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .text-muted {

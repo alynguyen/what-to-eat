@@ -17,7 +17,9 @@ const MainPage = (props) => {
       <header className="MainPage-Header">
       </header>
         <SearchBar 
+          handleSignupOrLogin={props.handleSignupOrLogin}
           handleSearch={props.handleSearch}
+          user={props.user}
         />
       <div className="flex">
         {props.results.map((results, idx) => (

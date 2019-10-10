@@ -8,7 +8,7 @@ const BusinessCard = (props) => {
   return (
     <Link to={`/${props.idx}`} className="link">
     <Card style={{ width: '18rem'}}>
-      <Card.Img className="BusinessCard-Img" variant="top" src={props.image} />
+      <Card.Img className="BusinessCard-Img" variant="top" src={props.image} alt={props.name}/>
       <Card.Body style={{ padding: '.5rem'}} className="BusinessCard-CardBody">
         <Card.Title>
           <div className="BusinessCard-StarsContainer">
