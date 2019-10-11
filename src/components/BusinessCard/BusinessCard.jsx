@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './BusinessCard.css';
-import { Container, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 
 const BusinessCard = (props) => {

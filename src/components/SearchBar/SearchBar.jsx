@@ -7,22 +7,8 @@ import userService from '../../services/userService';
 class SearchBar extends Component {
   state = {
     preference: '',
-    userPreferences: [null],
     user: this.props.user
   };
-
-  async handleGetPref() {
-    try {
-      console.log('searchbar', this.state.user._id)
-      let pref = await searchPref.getPref(this.state.user._id)
-        this.setState({
-          userPreferences: pref
-        })
-      console.log('pref', pref)
-    } catch(err) {
-      console.log(err);
-    }
-  }
 
   handleChange = (e) => {
     this.setState({
@@ -30,16 +16,14 @@ class SearchBar extends Component {
     })
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
     try {
-     searchPref.create(this.state)
-      this.setState({
-        preference: '',
-      }, 
-      () => this.handleGetPref()
-      )
-      this.handleGetPref();
+      await searchPref.create(this.state)
+        this.setState({
+         preference: ''
+         })
+      this.props.handleGetPref();
     } catch (err) {
       console.log(err);
     }

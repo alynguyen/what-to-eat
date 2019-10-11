@@ -20,6 +20,8 @@ const MainPage = (props) => {
           handleSignupOrLogin={props.handleSignupOrLogin}
           handleSearch={props.handleSearch}
           user={props.user}
+          preferences={props.preferences}
+          handleGetPref={props.handleGetPref}
         />
       <div className="flex">
         {props.results.map((results, idx) => (

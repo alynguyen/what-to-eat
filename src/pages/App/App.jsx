@@ -8,6 +8,7 @@ import LoadPage from '../LoadPage/LoadPage';
 import SignUpPage from '../SignUpPage/SignUpPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../services/userService';
+import searchPref from '../../services/searchPref';
 import { getCurrentLatLng } from '../../services/location';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -45,6 +46,7 @@ export class App extends Component {
       lat: null,
       lng: null,
       results: [],
+      preferences: [],
       user: userService.getUser()
     };
   }
@@ -52,16 +54,41 @@ export class App extends Component {
   async componentDidMount() {
     const {lat, lng} = await getCurrentLatLng();
     const results =  await getAllYelp(lat, lng);
+    const preferences = await searchPref.getPref(this.state.user._id);
     this.setState({
       lat,
       lng,
-      results: results
+      results: results,
+      preferences: preferences
     })
   }
-  
-  handleSearch = () => {
-    // this.setState({results: getAllYelp(this.lat, this.lng)})
+
+  // componentDidUpdate() {
+  //   this.handleGetPref();
+  // }
+
+  // handleGetPref = (e) => {
+  //   e.preventDefault();
+  //   let pref = searchPref.getPref(this.state.user._id)
+  //   console.log(pref);
+  //     this.setState({
+  //       preferences: pref
+  //     })
+  // }
+
+  handleGetPref = async () => {
+    try {
+      let pref = await searchPref.getPref(this.state.user._id);
+      this.setState({
+        preferences: pref
+      })
+    } catch (err) {
+      console.log(err);
+    }
   }
+  
+  // handleSearch = () => {
+  // }
 
   handleLogout = () => {
     userService.logout();
@@ -98,6 +125,8 @@ export class App extends Component {
             user={this.state.user}
             results={this.state.results}
             stars={stars}
+            preferences={this.state.preferences}
+            handleGetPref={this.handleGetPref}
           />
           :
           <LoadPage
