@@ -1,5 +1,6 @@
 
-export function getAllYelp(lat, lng) {
+export function getAllYelp(lat, lng, terms) {
+  console.log('terms', terms);
   return fetch(
     '/api/yelp/search', {
       method: 'POST',
@@ -10,7 +11,7 @@ export function getAllYelp(lat, lng) {
       body: JSON.stringify({
         latitude: lat,
         longitude: lng,
-        term: 'food, restaurants',
+        term: `food, restaurants, ${terms}`,
         radius: 500,
         limit: 50
       })

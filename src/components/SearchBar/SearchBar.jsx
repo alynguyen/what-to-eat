@@ -52,16 +52,23 @@ class SearchBar extends Component {
               onChange={this.handleChange}
             />
             <Button 
+              className="SearchBar-Btn"
               variant="danger"
               onClick={(e) => this.handleSubmit(e)}
               >
               Submit
             </Button>
+            <Button 
+              className="SearchBar-Btn"
+              variant="danger"
+              onClick={() => this.props.handleSearch()}
+              >
+              Search
+            </Button>
           </Form>
         </div>
         <div className="SearchBar-Filters">
           {this.props.preferences.map((p, idx) => (
-            // <Link to={`users/pref/${p._id}/delete`}>
               <button 
                 key={idx}
                 className="btn-round-xs"
@@ -69,7 +76,6 @@ class SearchBar extends Component {
                 >
                 {p.preference}
               </button>
-            // </Link>
           ))}
         </div>
       </div>

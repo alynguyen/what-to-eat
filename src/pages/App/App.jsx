@@ -47,34 +47,27 @@ export class App extends Component {
       lng: null,
       results: [],
       preferences: [],
+      terms: '',
       user: userService.getUser()
     };
   }
 
   async componentDidMount() {
     const {lat, lng} = await getCurrentLatLng();
-    const results =  await getAllYelp(lat, lng);
+    const results =  await getAllYelp(lat, lng, this.state.terms);
     const preferences = await searchPref.getPref(this.state.user._id);
+    let terms = [];
+    preferences.map( p => (
+      terms.push(p.preference)
+    ))
     this.setState({
       lat,
       lng,
       results: results,
-      preferences: preferences
+      preferences: preferences,
+      terms: terms.join(', ')
     })
   }
-
-  // componentDidUpdate() {
-  //   this.handleGetPref();
-  // }
-
-  // handleGetPref = (e) => {
-  //   e.preventDefault();
-  //   let pref = searchPref.getPref(this.state.user._id)
-  //   console.log(pref);
-  //     this.setState({
-  //       preferences: pref
-  //     })
-  // }
 
   handleGetPref = async () => {
     try {
@@ -87,8 +80,16 @@ export class App extends Component {
     }
   }
   
-  // handleSearch = () => {
-  // }
+  handleSearch = async () => {
+    try {
+      const results = await getAllYelp(this.state.lat, this.state.lng, this.state.terms);
+      this.setState({
+        results: results
+      })
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
   handleLogout = () => {
     userService.logout();
