@@ -2,7 +2,8 @@ const BASE_URL = '/api/users/pref/';
 
 export default {
   create,
-  getPref
+  getPref,
+  delPref
 };
 
 function create(pref) {
@@ -16,19 +17,23 @@ function create(pref) {
   return fetch(`${BASE_URL}`, options).then(res => res.json());
 }
 
-// function getPref(user) {
-//   const options = {
-//     method: 'GET',
-//     headers: {
-//       'Content-type': 'application/json'
-//     },
-//     body: JSON.stringify(user)
-//   };
-//   return fetch(BASE_URL + user.id, options).then(res => res.json())
-// }
-
 function getPref(user) {
   console.log('user ID', user)
   return fetch(BASE_URL + user)
     .then((res) => res.json());
+}
+
+function delPref(id, user) {
+  console.log('Delete', id, user);
+  const options = {
+    method: 'DELETE',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify({
+      id: id,
+      user: user
+    })
+  };
+  return fetch(`${BASE_URL}delete`, options).then(res => res.json());
 }

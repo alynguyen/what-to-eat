@@ -2,7 +2,8 @@ const User = require('../models/user');
 
 module.exports = {
   create,
-  getPref
+  getPref,
+  delPref
 };
 
 async function create(req, res) {
@@ -28,6 +29,22 @@ async function getPref(req, res) {
   } catch(err) {
     console.log(err);
     return res.status(500).send('Error with request');
+  }
+}
+
+async function delPref(req, res) {
+  try {
+    let user = await User.findById(req.body.user);
+    user.preferences.pull(req.body.id);
+    user.save();
+    console.log('user', user);
+    // let pref = await user.findOne({ 'preferences._id': req.body.id});
+    // pref.delete();
+    // console.log(pref);
+    return res.json(user);
+  } catch(err) {
+    console.log(err);
+    return res.status(500).send('Error with delete');
   }
 }
 

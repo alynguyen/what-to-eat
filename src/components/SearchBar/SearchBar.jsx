@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import './SearchBar.css';
 import searchPref from '../../services/searchPref';
 import userService from '../../services/userService';
+import { Link } from 'react-router-dom';
 
 class SearchBar extends Component {
   state = {
@@ -19,12 +20,20 @@ class SearchBar extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await searchPref.create(this.state)
-        this.setState({
-         preference: ''
-         })
-      this.props.handleGetPref();
+      await searchPref.create(this.state);
+        this.setState({ preference: '' });
+        this.props.handleGetPref();
     } catch (err) {
+      console.log(err);
+    }
+  }
+
+  handleDelete = async (id) => {
+    console.log(id);
+    try {
+      await searchPref.delPref(id, this.state.user);
+      this.props.handleGetPref();
+    } catch(err) {
       console.log(err);
     }
   }
@@ -49,6 +58,19 @@ class SearchBar extends Component {
               Submit
             </Button>
           </Form>
+        </div>
+        <div className="SearchBar-Filters">
+          {this.props.preferences.map((p, idx) => (
+            // <Link to={`users/pref/${p._id}/delete`}>
+              <button 
+                key={idx}
+                className="btn-round-xs"
+                onClick={() => this.handleDelete(p._id)}
+                >
+                {p.preference}
+              </button>
+            // </Link>
+          ))}
         </div>
       </div>
     );
