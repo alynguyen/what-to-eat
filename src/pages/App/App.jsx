@@ -100,6 +100,10 @@ export class App extends Component {
     this.setState({user: userService.getUser()});
   }
 
+  handleRandom = () => {
+    return Math.floor(Math.random() * Math.floor(this.state.results.length));
+  }
+
   render() {
     return (
       <div>
@@ -128,6 +132,7 @@ export class App extends Component {
             stars={stars}
             preferences={this.state.preferences}
             handleGetPref={this.handleGetPref}
+            handleRandom={this.handleRandom}
           />
           :
           <LoadPage
@@ -143,6 +148,7 @@ export class App extends Component {
             user={this.state.user}
             stars={stars_lrg}
             starsRg={stars}
+            handleRandom={this.handleRandom}
           />
           :
           <LoadPage

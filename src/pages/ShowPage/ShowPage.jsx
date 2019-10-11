@@ -3,8 +3,9 @@ import Navbar from '../../components/Navbar/Navbar';
 import './ShowPage.css'
 import GoogleMap from '../../components/GoogleMap/GoogleMap';
 import Reviews from '../../components/Reviews/Reviews';
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 import { getReviews } from '../../services/yelp-api';
+import { Link } from 'react-router-dom';
 
 
 class Show extends Component {
@@ -74,6 +75,16 @@ class Show extends Component {
             stars={this.props.starsRg}
             />
           </Card>
+          <div className="ShowPage-BtnNext">
+            <Link to={`/${this.props.handleRandom()}`}>
+                <Button 
+                  className="SearchBar-Btn"
+                  variant="danger"
+                  >
+                  Choose Another!
+                </Button>
+              </Link>
+          </div>
         </div>
       </>
     );

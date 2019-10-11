@@ -77,3 +77,8 @@
   align-items: flex-end;
   height: 100%;
 }
+
+.ShowPage-BtnNext {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

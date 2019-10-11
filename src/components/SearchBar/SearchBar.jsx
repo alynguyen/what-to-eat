@@ -65,6 +65,14 @@ class SearchBar extends Component {
               >
               Search
             </Button>
+            <Link to={`/${this.props.handleRandom()}`}>
+              <Button 
+                className="SearchBar-Btn"
+                variant="danger"
+                >
+                Choose For Me!
+              </Button>
+            </Link>
           </Form>
         </div>
         <div className="SearchBar-Filters">
