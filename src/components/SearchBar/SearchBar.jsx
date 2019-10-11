@@ -21,8 +21,10 @@ class SearchBar extends Component {
     e.preventDefault();
     try {
       await searchPref.create(this.state);
+      await this.props.handleGetPref();
+      await this.props.handleTerms();
+        this.props.handleSearch();
         this.setState({ preference: '' });
-        this.props.handleGetPref();
     } catch (err) {
       console.log(err);
     }
@@ -32,7 +34,9 @@ class SearchBar extends Component {
     console.log(id);
     try {
       await searchPref.delPref(id, this.state.user);
-      this.props.handleGetPref();
+      await this.props.handleGetPref();
+      await this.props.handleTerms();
+        this.props.handleSearch();
     } catch(err) {
       console.log(err);
     }

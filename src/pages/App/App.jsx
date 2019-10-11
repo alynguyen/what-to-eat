@@ -54,12 +54,12 @@ export class App extends Component {
 
   async componentDidMount() {
     const {lat, lng} = await getCurrentLatLng();
-    const results =  await getAllYelp(lat, lng, this.state.terms);
     const preferences = await searchPref.getPref(this.state.user._id);
     let terms = [];
-    preferences.map( p => (
+    await preferences.map( p => (
       terms.push(p.preference)
-    ))
+      ))
+    const results =  await getAllYelp(lat, lng, this.state.terms);
     this.setState({
       lat,
       lng,
@@ -104,6 +104,16 @@ export class App extends Component {
     return Math.floor(Math.random() * Math.floor(this.state.results.length));
   }
 
+  handleTerms = () => {
+    let terms = [];
+    this.state.preferences.map( p => (
+      terms.push(p.preference)
+      ))
+    this.setState({
+      terms: terms.join(', ')
+    })
+  }
+
   render() {
     return (
       <div>
@@ -133,6 +143,7 @@ export class App extends Component {
             preferences={this.state.preferences}
             handleGetPref={this.handleGetPref}
             handleRandom={this.handleRandom}
+            handleTerms={this.handleTerms}
           />
           :
           <LoadPage

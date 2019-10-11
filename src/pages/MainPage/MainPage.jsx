@@ -23,6 +23,7 @@ const MainPage = (props) => {
           preferences={props.preferences}
           handleGetPref={props.handleGetPref}
           handleRandom={props.handleRandom}
+          handleTerms={props.handleTerms}
         />
       <div className="flex">
         {props.results.map((results, idx) => (
