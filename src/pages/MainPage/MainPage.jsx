@@ -1,12 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import Navbar from '../../components/Navbar/Navbar';
 import BusinessCard from '../../components/BusinessCard/BusinessCard';
 import './MainPage.css'
-import { Container } from 'react-bootstrap';
 
 const MainPage = (props) => {
+
+  let main = props.results
+    ? <div className="flex">
+      {props.results.map((results, idx) => (
+        <BusinessCard
+          idx={idx}
+          id={results.id}
+          name={results.name}
+          image={results.image_url}
+          location={results.location.display_address[0]}
+          rating={results.rating}
+          reviewCount={results.review_count}
+          price={results.price}
+          stars={props.stars}
+          cats={results.categories}
+        />
+        ))}
+      </div>
+    : <div>No Results</div>
 
   return (
     <>
@@ -25,22 +42,7 @@ const MainPage = (props) => {
           handleRandom={props.handleRandom}
           handleTerms={props.handleTerms}
         />
-      <div className="flex">
-        {props.results.map((results, idx) => (
-          <BusinessCard
-            idx={idx}
-            id={results.id}
-            name={results.name}
-            image={results.image_url}
-            location={results.location.display_address[0]}
-            rating={results.rating}
-            reviewCount={results.review_count}
-            price={results.price}
-            stars={props.stars}
-            cats={results.categories}
-          />
-          ))}
-      </div>
+      {main}
     </>
   );
 }

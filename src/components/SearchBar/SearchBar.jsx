@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Form } from 'react-bootstrap';
 import './SearchBar.css';
 import searchPref from '../../services/searchPref';
-import userService from '../../services/userService';
 import { Link } from 'react-router-dom';
 
 class SearchBar extends Component {
@@ -31,7 +29,6 @@ class SearchBar extends Component {
   }
 
   handleDelete = async (id) => {
-    console.log(id);
     try {
       await searchPref.delPref(id, this.state.user);
       await this.props.handleGetPref();
@@ -53,13 +50,13 @@ class SearchBar extends Component {
           name="preference"
           onChange={this.handleChange}
           />
-        <Button 
-          className="SearchBar-Btn"
+        <button 
+          className="SearchBar-Btn btn-custom"
           variant="danger"
           onClick={(e) => this.handleSubmit(e)}
           >
           Search
-        </Button>
+        </button>
        </div>   
       : <div />
 
@@ -68,12 +65,12 @@ class SearchBar extends Component {
         <div className="SearchBar-Flex">
           {search}
             <Link to={`/${this.props.handleRandom()}`}>
-              <Button 
-                className="SearchBar-Btn"
+              <button 
+                className="SearchBar-Btn btn-custom"
                 variant="danger"
                 >
                 Choose For Me!
-              </Button>
+              </button>
             </Link>
         </div>
         <div className="SearchBar-Filters">

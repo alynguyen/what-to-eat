@@ -96,12 +96,17 @@ export class App extends Component {
   }
 
   handleLogout = () => {
-    userService.logout();
-    this.setState({ user: null });
+    userService.logout()
+    this.setState({ 
+      user: null,
+      preferences: [],
+      terms: ''
+    }, () => this.handleSearch());
   }
 
-  handleSignupOrLogin = () => {
+  handleSignupOrLogin = async () => {
     this.setState({user: userService.getUser()});
+    this.componentDidMount();
   }
 
   handleRandom = () => {
@@ -135,8 +140,8 @@ export class App extends Component {
           />
           }/>
         <Route exact path='/' render={() =>
-          this.state.results.length
-          ? 
+          // this.state.results.length
+          // ? 
           <MainPage 
             handleSignupOrLogin={this.handleSignupOrLogin}
             handleLogout={this.handleLogout}
@@ -149,10 +154,10 @@ export class App extends Component {
             handleRandom={this.handleRandom}
             handleTerms={this.handleTerms}
           />
-          :
-          <LoadPage
-            user={this.state.user}
-          />
+          // :
+          // <LoadPage
+          //   user={this.state.user}
+          // />
           }/>
         <Route exact path='/:id' render={ props =>
           this.state.results.length

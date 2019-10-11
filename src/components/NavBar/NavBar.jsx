@@ -14,12 +14,11 @@ const NavBar = (props) => {
     :
       <div>
         <Link to='/login'>
-          <Button variant="primary-outline">
-            Log In
-          </Button>
+          <button className="btn-out">Log In</button>
         </Link>
         <Link to='/signup'>
-          <Button variant="danger">Sign Up</Button>
+          {/* <Button variant="danger">Sign Up</Button> */}
+          <button className="btn-custom">Sign Up</button>
         </Link>
        </div>
   return (
