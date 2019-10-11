@@ -18,13 +18,11 @@ function create(pref) {
 }
 
 function getPref(user) {
-  console.log('user ID', user)
   return fetch(BASE_URL + user)
     .then((res) => res.json());
 }
 
 function delPref(id, user) {
-  console.log('Delete', id, user);
   const options = {
     method: 'DELETE',
     headers: {

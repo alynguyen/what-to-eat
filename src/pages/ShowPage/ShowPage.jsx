@@ -3,7 +3,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import './ShowPage.css'
 import GoogleMap from '../../components/GoogleMap/GoogleMap';
 import Reviews from '../../components/Reviews/Reviews';
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { getReviews } from '../../services/yelp-api';
 import { Link } from 'react-router-dom';
 
@@ -18,10 +18,8 @@ class Show extends Component {
 
   async componentDidMount() {
     const reviews = await getReviews(this.props.data.id);
-    console.log(reviews);
     this.setState({reviews: reviews})
   }
-
 
   render() {
     return (
@@ -56,7 +54,7 @@ class Show extends Component {
             </div>
           </div>
           <div className="ShowPage-Logo">
-            <img style={{height: "2em"}} src="images/yelp.png" alt="Yelp"/>
+              <img style={{height: "2em"}} src="images/yelp.png" alt="Yelp" onClick={() => window.open(this.props.data.url, "_blank")}/>
           </div>
         </Card>
         <Card style={{ width: '20rem' }}>
@@ -77,12 +75,12 @@ class Show extends Component {
           </Card>
           <div className="ShowPage-BtnNext">
             <Link to={`/${this.props.handleRandom()}`}>
-                <Button 
-                  className="SearchBar-Btn"
+                <button 
+                  className="SearchBar-Btn btn-custom"
                   variant="danger"
                   >
                   Choose Another!
-                </Button>
+                </button>
               </Link>
           </div>
         </div>

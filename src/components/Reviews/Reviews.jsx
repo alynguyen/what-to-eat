@@ -1,5 +1,5 @@
 import React from 'react';
-import { Media, Card } from 'react-bootstrap';
+import { Media } from 'react-bootstrap';
 import './Reviews.css';
 import Moment from 'react-moment';
 

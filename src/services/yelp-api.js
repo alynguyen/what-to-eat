@@ -1,6 +1,5 @@
 
 export function getAllYelp(lat, lng, terms) {
-  console.log('terms', terms);
   return fetch(
     '/api/yelp/search', {
       method: 'POST',

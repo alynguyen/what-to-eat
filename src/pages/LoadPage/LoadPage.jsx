@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
-import { Container } from 'react-bootstrap';
 import ReactLoading from 'react-loading';
 import './LoadPage.css'
 
