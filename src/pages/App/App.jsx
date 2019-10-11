@@ -140,8 +140,6 @@ export class App extends Component {
           />
           }/>
         <Route exact path='/' render={() =>
-          // this.state.results.length
-          // ? 
           <MainPage 
             handleSignupOrLogin={this.handleSignupOrLogin}
             handleLogout={this.handleLogout}
@@ -154,10 +152,6 @@ export class App extends Component {
             handleRandom={this.handleRandom}
             handleTerms={this.handleTerms}
           />
-          // :
-          // <LoadPage
-          //   user={this.state.user}
-          // />
           }/>
         <Route exact path='/:id' render={ props =>
           this.state.results.length

@@ -1,4 +1,15 @@
 .Navbar {
   font-family: 'Merriweather';
   font-weight: bold;
+  padding: 2px;
+}
+
+.Navbar-Logo {
+  margin: 0;
+  border: 2px solid #F8F9FA;
+}
+
+.Navbar-Logo:hover {
+  /* text-decoration: underline; */
+  border-bottom: 2px solid black;
 }

@@ -1,0 +1,14 @@
+.LoginPage {
+  font-family: 'Merriweather'
+}
+
+.LoginPage-Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.LoginPage-Container h1 {
+  margin-bottom: 2rem;
+}

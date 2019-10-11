@@ -102,3 +102,15 @@ code {
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+.btn-out:hover {
+  text-decoration: underline;
+}
+
+.btn-login {
+  background-color: white;
+}
+
+.btn-login:hover {
+  cursor: pointer;
+}

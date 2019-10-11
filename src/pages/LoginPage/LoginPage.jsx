@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import './LoginPage.css';
+import Navbar from '../../components/Navbar/Navbar';
 import userService from '../../services/userService';
+import './LoginPage.css'
 
 class LoginPage extends Component {
   
@@ -34,25 +35,29 @@ class LoginPage extends Component {
   render() {
     return (
       <div className="LoginPage">
-        <header className="header-footer">Log In</header>
-        <form className="form-horizontal" onSubmit={this.handleSubmit} >
-          <div className="form-group">
-            <div className="col-sm-12">
-              <input type="email" className="form-control" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
+        <Navbar />
+        <header className="header-footer"></header>
+        <div className="LoginPage-Container">
+          <form className="form-horizontal" onSubmit={this.handleSubmit} >
+            <h1>Email / Password</h1>
+            <div className="form-group">
+              <div className="col-sm-12">
+                <input type="email" className="form-control" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
+              </div>
             </div>
-          </div>
-          <div className="form-group">
-            <div className="col-sm-12">
-              <input type="password" className="form-control" placeholder="Password" value={this.state.pw} name="pw" onChange={this.handleChange} />
+            <div className="form-group">
+              <div className="col-sm-12">
+                <input type="password" className="form-control" placeholder="Password" value={this.state.pw} name="pw" onChange={this.handleChange} />
+              </div>
             </div>
-          </div>
-          <div className="form-group">
-            <div className="col-sm-12 text-center">
-              <button className="btn btn-default">Log In</button>&nbsp;&nbsp;&nbsp;
-              <Link to='/'>Cancel</Link>
+            <div className="form-group">
+              <div className="col-sm-12 text-center">
+                <button className="btn-out btn-login">Log In</button>&nbsp;&nbsp;&nbsp;
+                <Link to='/' className="btn-custom link">Cancel</Link>
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     );
   }

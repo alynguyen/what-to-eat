@@ -12,9 +12,10 @@ const Reviews = (props) => {
           <img
             width={64}
             height={64}
-            className="mr-3"
+            className="mr-3 Reviews-ProfileImg"
             src={review.user.image_url}
             alt={review.user.name}
+            onClick={() => window.open(review.user.profile_url, "_blank")}
             />
           <Media.Body>
               <div className="Reviews-Name">
@@ -24,7 +25,10 @@ const Reviews = (props) => {
                 </Moment>
               </div>
               <img className="Reviews-Img" src={props.stars[review.rating]} alt={review.rating} />
-            <p>{review.text}</p>
+            <p
+              className="Reviews-P"
+              onClick={() => window.open(review.url, "_blank")}
+            >{review.text}</p>
           </Media.Body>
         </Media>
       ))}

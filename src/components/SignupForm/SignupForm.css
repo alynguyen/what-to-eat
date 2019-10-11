@@ -1,0 +1,14 @@
+.SignupForm {
+  font-family: 'Merriweather'
+}
+
+.SignupForm-Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.SignupForm-Container h1 {
+  margin-bottom: 2rem;
+}

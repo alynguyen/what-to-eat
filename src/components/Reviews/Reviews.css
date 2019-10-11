@@ -3,6 +3,10 @@
   line-height: 1.5;
 }
 
+.Reviews-ProfileImg:hover {
+  cursor: pointer
+}
+
 .Reviews h1 {
   margin-bottom: .5em;
 }
@@ -15,6 +19,10 @@
   display: flex;
   justify-content: space-between;
   margin-right: 1.8em;
+}
+
+.Reviews-P:hover {
+  cursor: pointer;
 }
 
 .media-body p {
