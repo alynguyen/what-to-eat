@@ -43,32 +43,30 @@ class SearchBar extends Component {
   }
 
   render() {
+    let search = this.props.user ?        
+       <div>
+        <input 
+          className="SearchBar-Input"
+          type='text'
+          placeholder="Add Preferences"
+          value={this.state.preference}
+          name="preference"
+          onChange={this.handleChange}
+          />
+        <Button 
+          className="SearchBar-Btn"
+          variant="danger"
+          onClick={(e) => this.handleSubmit(e)}
+          >
+          Search
+        </Button>
+       </div>   
+      : <div />
+
     return (
       <div className="SearchBar">
         <div className="SearchBar-Flex">
-          <Form>
-            <input 
-              className="SearchBar-Input"
-              type='text'
-              placeholder="Add Preferences"
-              value={this.state.preference}
-              name="preference"
-              onChange={this.handleChange}
-            />
-            <Button 
-              className="SearchBar-Btn"
-              variant="danger"
-              onClick={(e) => this.handleSubmit(e)}
-              >
-              Submit
-            </Button>
-            <Button 
-              className="SearchBar-Btn"
-              variant="danger"
-              onClick={() => this.props.handleSearch()}
-              >
-              Search
-            </Button>
+          {search}
             <Link to={`/${this.props.handleRandom()}`}>
               <Button 
                 className="SearchBar-Btn"
@@ -77,17 +75,16 @@ class SearchBar extends Component {
                 Choose For Me!
               </Button>
             </Link>
-          </Form>
         </div>
         <div className="SearchBar-Filters">
           {this.props.preferences.map((p, idx) => (
-              <button 
-                key={idx}
-                className="btn-round-xs"
-                onClick={() => this.handleDelete(p._id)}
-                >
-                {p.preference}
-              </button>
+            <button 
+              key={idx}
+              className="btn-round-xs"
+              onClick={() => this.handleDelete(p._id)}
+              >
+              {p.preference}
+            </button>
           ))}
         </div>
       </div>

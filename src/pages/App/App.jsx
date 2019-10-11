@@ -54,18 +54,22 @@ export class App extends Component {
 
   async componentDidMount() {
     const {lat, lng} = await getCurrentLatLng();
-    const preferences = await searchPref.getPref(this.state.user._id);
-    let terms = [];
-    await preferences.map( p => (
-      terms.push(p.preference)
-      ))
+    if (this.state.user) {
+      let terms = [];
+      const preferences = await searchPref.getPref(this.state.user._id);
+      await preferences.map( p => (
+        terms.push(p.preference)
+        ))
+      this.setState({
+        preferences: preferences,
+        terms: terms.join(', ')
+      })
+    }
     const results =  await getAllYelp(lat, lng, this.state.terms);
     this.setState({
       lat,
       lng,
       results: results,
-      preferences: preferences,
-      terms: terms.join(', ')
     })
   }
 
