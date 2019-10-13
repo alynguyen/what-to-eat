@@ -47,22 +47,22 @@ class SignupForm extends Component {
             <h1> Sign Up Form</h1>
             <div className="form-group">
               <div className="col-sm-12">
-                <input type="text" className="form-control" placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange} />
+                <input autoComplete="name" type="text" className="form-control" placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange} />
               </div>
             </div>
             <div className="form-group">
               <div className="col-sm-12">
-                <input type="email" className="form-control" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
+                <input autoComplete="email" type="email" className="form-control" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
               </div>
             </div>
             <div className="form-group">
               <div className="col-sm-12">
-                <input type="password" className="form-control" placeholder="Password" value={this.state.password} name="password" onChange={this.handleChange} />
+                <input autoComplete="new-password" type="password" className="form-control" placeholder="Password" value={this.state.password} name="password" onChange={this.handleChange} />
               </div>
             </div>
             <div className="form-group">
               <div className="col-sm-12">
-                <input type="password" className="form-control" placeholder="Confirm Password" value={this.state.passwordConf} name="passwordConf" onChange={this.handleChange} />
+                <input autoComplete="confirm-password" type="password" className="form-control" placeholder="Confirm Password" value={this.state.passwordConf} name="passwordConf" onChange={this.handleChange} />
               </div>
             </div>
             <div className="form-group">

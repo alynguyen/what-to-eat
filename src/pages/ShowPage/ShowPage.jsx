@@ -30,7 +30,9 @@ class Show extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.data !== this.props.data) {
       this.handleReviews();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
   }
 
   render() {

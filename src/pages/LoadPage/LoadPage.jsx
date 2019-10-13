@@ -10,8 +10,8 @@ const LoadPage = (props) => {
     <ReactLoading 
       type={'spinningBubbles'} 
       color={'grey'} 
-      height={'5%'} 
-      width={'5%'}
+      height={'7%'} 
+      width={'7%'}
     />
   :
     props.total === 0
