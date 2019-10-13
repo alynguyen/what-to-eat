@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../../components/Navbar/Navbar';
+import NavBar from '../../components/NavBarC/NavBarC';
 import userService from '../../services/userService';
 import './LoginPage.css'
 
@@ -35,7 +35,7 @@ class LoginPage extends Component {
   render() {
     return (
       <div className="LoginPage">
-        <Navbar />
+        <NavBar />
         <header className="header-footer"></header>
         <div className="LoginPage-Container">
           <form className="form-horizontal" onSubmit={this.handleSubmit} >

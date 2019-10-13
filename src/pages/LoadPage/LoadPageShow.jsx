@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactLoading from 'react-loading';
-import Navbar from '../../components/Navbar/Navbar'
+import NavBarC from '../../components/NavBarC/NavBarC'
 import './LoadPage.css'
 
 
@@ -8,7 +8,7 @@ import './LoadPage.css'
 const LoadPageShow = (props) => {
   return (
     <div>
-      <Navbar />
+      <NavBarC />
       <div className="LoadPageShow">
         <ReactLoading 
           type={'spinningBubbles'} 

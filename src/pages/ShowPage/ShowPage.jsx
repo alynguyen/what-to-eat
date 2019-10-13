@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from '../../components/Navbar/Navbar';
+import NavBarC from '../../components/NavBarC/NavBarC';
 import GoogleMap from '../../components/GoogleMap/GoogleMap';
 import Reviews from '../../components/Reviews/Reviews';
 import { Card } from 'react-bootstrap';
@@ -38,7 +38,7 @@ class Show extends Component {
   render() {
     return (
       <>
-      <Navbar 
+      <NavBarC
         handleLogout={this.props.handleLogout}
         user={this.props.user}
         />

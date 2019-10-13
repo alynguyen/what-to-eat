@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
-import './Navbar.css';
+import './NavBarC.css';
 
-const NavBar = (props) => {
+const NavBarC = (props) => {
   let nav = props.user ?
     <button
       className="btn-custom Navbar-Login"
@@ -66,4 +66,4 @@ const NavBar = (props) => {
   );
 }
 
-export default NavBar;
+export default NavBarC;

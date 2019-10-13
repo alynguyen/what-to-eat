@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchBar from '../../components/SearchBar/SearchBar';
-import Navbar from '../../components/Navbar/Navbar';
+import NavBarC from '../../components/NavBarC/NavBarC';
 import BusinessCard from '../../components/BusinessCard/BusinessCard';
 import LoadPage from '../../pages/LoadPage/LoadPage';
 import './MainPage.css'
@@ -31,7 +31,7 @@ const MainPage = (props) => {
 
   return (
     <>
-      <Navbar 
+      <NavBarC 
         handleLogout={props.handleLogout}
         user={props.user}
       />
