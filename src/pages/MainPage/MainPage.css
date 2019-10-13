@@ -21,3 +21,19 @@
   height: 20vh;
   margin-top: 3rem;
 }
+
+@media only screen and (max-width: 414px) {
+  .MainPage-Header {
+    display: none;
+  }
+
+  .MainPage-Load {
+    height: 50vh;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .MainPage-Header {
+    display: none;
+  }
+}

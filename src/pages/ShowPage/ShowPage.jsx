@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
-import './ShowPage.css'
 import GoogleMap from '../../components/GoogleMap/GoogleMap';
 import Reviews from '../../components/Reviews/Reviews';
 import { Card } from 'react-bootstrap';
 import { getReviews } from '../../services/yelp-api';
 import { Link } from 'react-router-dom';
+import './ShowPage.css'
 
 
 
@@ -79,7 +79,7 @@ class Show extends Component {
             cords={this.props.data.coordinates}
             />
           </Card>
-        <Card style={{ width: '64rem'}}>
+        <Card className="ShowPage-ReviewCard">
           <Reviews 
             reviews={this.state.reviews}
             stars={this.props.starsRg}

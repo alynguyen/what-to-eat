@@ -61,3 +61,43 @@
   visibility: hidden;
   margin: 0 .1em;
 }
+
+.SearchBar-ColPref {
+  display: none;
+}
+
+@media only screen and (max-width: 414px) {
+  .SearchBar {
+    margin: 1.5em auto;
+    height: 4rem;
+  }
+
+  .SearchBar-PrefContainer {
+    display: none;
+  }
+
+  .SearchBar-Flex {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .SearchBar-ColPref {
+    display: flex;
+    margin-top: 1em;
+  }
+
+  .SearchBar-Btn {
+    margin-top: .5em;
+    margin-bottom: .5em;
+    width: 10rem;
+  }
+
+  .SearchBar-ColHide {
+    display: none
+  }
+
+  .SearchBar-FilterBtn {
+    margin-bottom: 1em;
+  }
+}

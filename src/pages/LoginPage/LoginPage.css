@@ -12,3 +12,9 @@
 .LoginPage-Container h1 {
   margin-bottom: 2rem;
 }
+
+@media only screen and (max-width: 414px) {
+  .LoginPage-Container h1 {
+    font-size: 2em;
+  }
+}

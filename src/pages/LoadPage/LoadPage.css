@@ -11,3 +11,9 @@
   align-items: center;
   height: 70vh;
 }
+
+@media only screen and (max-width: 414px) {
+  .LoadPage {
+    height: 40vh;
+  }
+}

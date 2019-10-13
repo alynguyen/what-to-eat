@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './SearchBar.css';
 import searchPref from '../../services/searchPref';
-import { Link } from 'react-router-dom';
 
 class SearchBar extends Component {
   state = {
@@ -17,6 +16,7 @@ class SearchBar extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
+    if (!this.state.preference) return;
     try {
       await searchPref.create(this.state);
       await this.props.handleGetPref();
@@ -39,9 +39,32 @@ class SearchBar extends Component {
     }
   }
 
+  onClick(){
+    window.location.href=`/${this.props.handleRandom()}`;
+  }
+
   render() {
+
+    let checkTotal = this.props.total ?
+      <button 
+        className="btn-custom"
+        onClick={() => this.onClick()}
+        >
+        <i className="fas fa-dice"></i>
+      </button>
+    : <div />
+
+    let checkTotalEx = this.props.total ?
+      <button 
+        className="btn-custom"
+        onClick={() => this.onClick()}
+      >
+        Choose For Me!
+      </button>
+    : <div />
+
     let search = this.props.user ?        
-       <div>
+       <div className="SearchBar-PrefContainer">
         <input 
           className="SearchBar-Input"
           type='text'
@@ -52,30 +75,48 @@ class SearchBar extends Component {
           />
         <button 
           className="SearchBar-Btn btn-custom"
-          variant="danger"
           onClick={(e) => this.handleSubmit(e)}
           >
           Search
         </button>
+        {checkTotalEx}
        </div>   
       : <div />
 
-    let rngBtn = this.props.total
-      ?
-        <Link to={`/${this.props.handleRandom()}`}>
-          <button 
-            className="SearchBar-Btn btn-custom"
-            >
-            Choose For Me!
-          </button>
-        </Link>
+    let searchCol = this.props.user ?        
+      <div className="SearchBar-ColPref">
+       <input 
+         className="SearchBar-Input"
+         type='text'
+         placeholder="Add Preferences"
+         value={this.state.preference}
+         name="preference"
+         onChange={this.handleChange}
+         />
+       <button 
+         className="btn-custom SearchBar-ColBtn"
+         style={{marginRight: '.5rem'}}
+         onClick={(e) => this.handleSubmit(e)}
+         >
+         <i className="fas fa-search"></i>
+       </button>
+       {checkTotal}
+      </div>   
+     : 
+      this.props.total ?
+        <button 
+          onClick={() => this.onClick()}
+          className="SearchBar-Btn btn-custom"
+        >
+          Choose For Me!
+        </button>
       : <div />
 
     return (
       <div className="SearchBar">
         <div className="SearchBar-Flex">
           {search}
-          {rngBtn}
+          {searchCol}
         </div>
         <div className="SearchBar-Filters">
           {this.props.preferences.map((p, idx) => (

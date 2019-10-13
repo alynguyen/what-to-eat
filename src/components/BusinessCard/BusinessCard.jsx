@@ -7,9 +7,9 @@ import { Card } from 'react-bootstrap';
 const BusinessCard = (props) => {
   return (
     <Link to={`/${props.idx}`} className="link">
-    <Card style={{ width: '18rem'}}>
+    <Card className="BusinessCard-Card">
       <Card.Img className="BusinessCard-Img" variant="top" src={props.image} alt={props.name}/>
-      <Card.Body style={{ padding: '.5rem'}} className="BusinessCard-CardBody">
+      <Card.Body style={{ padding: '.5rem .7rem'}} className="BusinessCard-CardBody">
         <Card.Title>
           <div className="BusinessCard-StarsContainer">
             <img src={props.stars[props.rating]} alt={props.rating} />

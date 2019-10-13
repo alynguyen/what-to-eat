@@ -28,3 +28,17 @@
 .media-body p {
   margin-right: 1em;
 }
+
+@media only screen and (max-width: 414px) {
+  .Reviews {
+    margin: auto 2rem;
+  }
+
+  .Reviews-ProfileImg {
+    display: none;
+  }
+
+  .Reviews h1 {
+    text-align: center;
+  }
+}
