@@ -19,7 +19,6 @@ async function create(req, res) {
 }
 
 async function getPref(req, res) {
-  console.log(req.body);
   try {
     let user = await User.findById(req.params.id);
     return res.json(user.preferences);
@@ -34,7 +33,6 @@ async function delPref(req, res) {
     let user = await User.findById(req.body.user);
     user.preferences.pull(req.body.id);
     user.save();
-    console.log('user', user);
     return res.json(user);
   } catch(err) {
     console.log(err);

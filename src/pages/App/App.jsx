@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import './App.css';
 import { getAllYelp } from '../../services/yelp-api';
 import MainPage from '../MainPage/MainPage';
 import ShowPage from '../ShowPage/ShowPage';
@@ -11,6 +10,7 @@ import userService from '../../services/userService';
 import searchPref from '../../services/searchPref';
 import { getCurrentLatLng } from '../../services/location';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 const stars = {
   0: 'images/stars/regular/regular_0.png',
@@ -66,6 +66,7 @@ export class App extends Component {
         terms: terms.join(', ')
       })
     }
+
     const results =  await getAllYelp(lat, lng, this.state.terms);
     this.setState({
       lat,

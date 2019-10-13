@@ -33,7 +33,7 @@ class SearchBar extends Component {
       await searchPref.delPref(id, this.state.user);
       await this.props.handleGetPref();
       await this.props.handleTerms();
-        this.props.handleSearch();
+      this.props.handleSearch();
     } catch(err) {
       console.log(err);
     }
@@ -79,15 +79,14 @@ class SearchBar extends Component {
         </div>
         <div className="SearchBar-Filters">
           {this.props.preferences.map((p, idx) => (
-            <div className="SearchBar-FilterBtn">
+            <div key={idx} className="SearchBar-FilterBtn">
               <button 
-                key={idx}
                 className="btn-round-xs"
                 onClick={() => this.handleDelete(p._id)}
                 >
                   {p.preference}
               </button>
-              <i class="far fa-trash-alt"></i>
+              <i className="far fa-trash-alt"></i>
             </div>
           ))}
         </div>
