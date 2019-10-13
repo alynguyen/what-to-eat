@@ -52,7 +52,7 @@ const NavBar = (props) => {
     <div className="Navbar">
       <Navbar collapseOnSelect expand="sm" bg="light" variant="light">
         <Navbar.Brand href="/">
-          <p className="Navbar-Logo">What To Eat</p>
+          <p className="Navbar-Logo">Hangry Games</p>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
