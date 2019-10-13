@@ -8,6 +8,7 @@ import { getReviews } from '../../services/yelp-api';
 import { Link } from 'react-router-dom';
 
 
+
 class Show extends Component {
   constructor(props) {
     super(props);
@@ -16,9 +17,20 @@ class Show extends Component {
     }
   }
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.handleReviews();
+  }
+
+  async handleReviews() {
     const reviews = await getReviews(this.props.data.id);
     this.setState({reviews: reviews})
+  
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.data !== this.props.data) {
+      this.handleReviews();
+    }
   }
 
   render() {
@@ -77,7 +89,7 @@ class Show extends Component {
             <Link to={`/${this.props.handleRandom()}`}>
                 <button 
                   className="SearchBar-Btn btn-custom"
-                  variant="danger"
+                  onClick={() => this.handleReviews()}
                   >
                   Choose Another!
                 </button>

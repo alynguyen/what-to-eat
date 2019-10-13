@@ -4,7 +4,7 @@ import './App.css';
 import { getAllYelp } from '../../services/yelp-api';
 import MainPage from '../MainPage/MainPage';
 import ShowPage from '../ShowPage/ShowPage';
-import LoadPage from '../LoadPage/LoadPage';
+import LoadPageShow from '../LoadPage/LoadPageShow';
 import SignUpPage from '../SignUpPage/SignUpPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../services/userService';
@@ -46,6 +46,7 @@ export class App extends Component {
       lat: null,
       lng: null,
       results: [],
+      total: null,
       preferences: [],
       terms: '',
       user: userService.getUser()
@@ -69,7 +70,8 @@ export class App extends Component {
     this.setState({
       lat,
       lng,
-      results: results,
+      results: results.businesses,
+      total: results.total
     })
   }
 
@@ -88,7 +90,8 @@ export class App extends Component {
     try {
       const results = await getAllYelp(this.state.lat, this.state.lng, this.state.terms);
       this.setState({
-        results: results
+        results: results.businesses,
+        total: results.total
       })
     } catch (err) {
       console.log(err)
@@ -141,13 +144,14 @@ export class App extends Component {
           }/>
         <Route exact path='/' render={() =>
           <MainPage 
+            stars={stars}
+            user={this.state.user}
+            results={this.state.results}
+            total={this.state.total}
+            preferences={this.state.preferences}
             handleSignupOrLogin={this.handleSignupOrLogin}
             handleLogout={this.handleLogout}
             handleSearch={this.handleSearch}
-            user={this.state.user}
-            results={this.state.results}
-            stars={stars}
-            preferences={this.state.preferences}
             handleGetPref={this.handleGetPref}
             handleRandom={this.handleRandom}
             handleTerms={this.handleTerms}
@@ -156,18 +160,18 @@ export class App extends Component {
         <Route exact path='/:id' render={ props =>
           this.state.results.length
           ?
-          <ShowPage 
-            {...props}
-            data={ this.state.results[props.match.params.id] }
-            user={this.state.user}
-            stars={stars_lrg}
-            starsRg={stars}
-            handleRandom={this.handleRandom}
-          />
+            <ShowPage 
+              {...props}
+              data={this.state.results[props.match.params.id]}
+              user={this.state.user}
+              stars={stars_lrg}
+              starsRg={stars}
+              handleRandom={this.handleRandom}
+            />
           :
-          <LoadPage
-            user={this.state.user}
-          />
+            <LoadPageShow
+              user={this.state.user}
+            />
           }/>
         </Switch>
       </div>

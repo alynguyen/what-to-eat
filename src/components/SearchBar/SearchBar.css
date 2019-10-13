@@ -2,10 +2,8 @@
   font-family: 'Merriweather';
   font-weight: bold;
   text-align: center;
-  /* margin-bottom: 2rem; */
   display: flex;
   justify-content: center;
-  /* height: 25rem; */
   align-items: center;
   flex-direction: column;
 }
@@ -28,7 +26,13 @@
 }
 
 .SearchBar-Filters {
+  display: flex;
   margin-bottom: .5rem;
+}
+
+.SearchBar-FilterBtn:hover {
+  display: inline;
+  color: red;
 }
 
 .SearchBar-Btn {
@@ -40,9 +44,20 @@
   padding-left: 10px;
   padding-right: 10px;
   font-size: .7em;
-  margin: 0 .5em;
+  margin: 0 .4em;
   }
-  
-  .btn-round-xs:focus {
+
+.btn-round-xs:hover+.fa-trash-alt {
+  visibility: visible;
+}
+
+.btn-round-xs:focus {
     outline: 0
   }
+
+.fa-trash-alt {
+  font-size: .7em;
+  color: #D32322;
+  visibility: hidden;
+  margin: 0 .1em;
+}

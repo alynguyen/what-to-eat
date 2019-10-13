@@ -10,9 +10,14 @@
 
 .MainPage-Header {
   font-family: 'Merriweather';
-  background-image: url("/images/sushigrey.jpg");
+  background-image: url("/images/sushi.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position-y: center;
   height: 25rem;
+}
+
+.MainPage-Load {
+  height: 20vh;
+  margin-top: 3rem;
 }

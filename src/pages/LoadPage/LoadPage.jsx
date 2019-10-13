@@ -1,20 +1,28 @@
 import React from 'react';
-import Navbar from '../../components/Navbar/Navbar';
 import ReactLoading from 'react-loading';
 import './LoadPage.css'
 
 
 const LoadPage = (props) => {
+
+  let loadContent = props.total === null
+  ?         
+    <ReactLoading 
+      type={'spinningBubbles'} 
+      color={'grey'} 
+      height={'5%'} 
+      width={'5%'}
+    />
+  :
+    props.total === 0
+    ?
+      <div>No results</div>
+    : <div></div>
+
   return (
     <div>
-    <Navbar />
       <div className="LoadPage">
-      <ReactLoading 
-        type={'spinningBubbles'} 
-        color={'grey'} 
-        height={'10%'} 
-        width={'10%'}
-        />
+        {loadContent}
       </div>
     </div>
   );

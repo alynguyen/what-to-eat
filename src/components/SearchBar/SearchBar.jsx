@@ -60,31 +60,38 @@ class SearchBar extends Component {
        </div>   
       : <div />
 
+    let rngBtn = this.props.total
+      ?
+        <Link to={`/${this.props.handleRandom()}`}>
+          <button 
+            className="SearchBar-Btn btn-custom"
+            >
+            Choose For Me!
+          </button>
+        </Link>
+      : <div />
+
     return (
       <div className="SearchBar">
         <div className="SearchBar-Flex">
           {search}
-            <Link to={`/${this.props.handleRandom()}`}>
-              <button 
-                className="SearchBar-Btn btn-custom"
-                variant="danger"
-                >
-                Choose For Me!
-              </button>
-            </Link>
+          {rngBtn}
         </div>
         <div className="SearchBar-Filters">
           {this.props.preferences.map((p, idx) => (
-            <button 
-              key={idx}
-              className="btn-round-xs"
-              onClick={() => this.handleDelete(p._id)}
-              >
-              {p.preference}
-            </button>
+            <div className="SearchBar-FilterBtn">
+              <button 
+                key={idx}
+                className="btn-round-xs"
+                onClick={() => this.handleDelete(p._id)}
+                >
+                  {p.preference}
+              </button>
+              <i class="far fa-trash-alt"></i>
+            </div>
           ))}
         </div>
-      </div>
+       </div>
     );
   }
 }

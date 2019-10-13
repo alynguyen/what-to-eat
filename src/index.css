@@ -114,3 +114,10 @@ code {
 .btn-login:hover {
   cursor: pointer;
 }
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}

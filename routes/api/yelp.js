@@ -6,7 +6,7 @@ const client = yelp.client(process.env.API_KEY);
 
 router.post('/search', async (req, res) => {
     const results = await client.search(req.body);
-    return res.json(results.jsonBody.businesses);
+    return res.json(results.jsonBody);
 })
 
 router.get('/:id/reviews', async (req, res) => {
