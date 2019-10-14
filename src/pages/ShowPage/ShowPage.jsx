@@ -53,6 +53,7 @@ class Show extends Component {
           <div className="ShowPage-CatContainer">
             {this.props.data.categories.map((cat, idx) => (
               <li 
+                style={{height: '1.5em'}}
                 key={idx}
                 className="ShowPage-Cat"
               >
@@ -63,8 +64,8 @@ class Show extends Component {
           <div className="flex-row" style={{height: '3em'}}>
             <i className="fas fa-map-marker-alt ShowPage-Marker"></i>
             <div className="ShowPage-TextAddress">
-              <span>{this.props.data.location.display_address[0]}</span>
-              <span>{this.props.data.location.display_address[1]}</span>
+              <span style={{height: '1.5em'}}>{this.props.data.location.display_address[0]}</span>
+              <span style={{height: '1.5em'}}>{this.props.data.location.display_address[1]}</span>
             </div>
           </div>
           <div className="ShowPage-Logo">
