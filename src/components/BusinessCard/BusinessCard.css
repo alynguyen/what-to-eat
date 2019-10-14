@@ -34,3 +34,14 @@
   justify-content: flex-end;
   margin-top: 1em;
 }
+
+.BusinessCard-Logo img {
+  max-height: 2em;
+}
+
+@media only screen and (max-width: 414px) {
+  .BusinessCard-Card {
+    height: auto;
+    max-height: 29rem;
+  }
+}
