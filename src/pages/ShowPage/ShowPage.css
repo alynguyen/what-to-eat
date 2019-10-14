@@ -101,7 +101,6 @@
 .ShowPage-AddContainer {
   display: flex;
   flex-direction: row;
-  /* align-self: flex-start; */
   width: 100%;  
   align-self: flex-end;
 }

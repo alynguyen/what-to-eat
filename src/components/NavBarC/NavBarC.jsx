@@ -23,18 +23,6 @@ const NavBarC = (props) => {
 
   const collapseNav = props.user ?
      <div className="hide-link">
-       {/* Implementing in the future */}
-        {/* <Form inline>
-          <FormControl 
-            type="text" 
-            placeholder="Search" 
-            className="mr-sm-2" 
-            style={{width: '14rem'}}
-          />
-            <div className="btn-custom Navbar-ColSearch">
-              <i class="fas fa-search"></i>
-            </div>
-        </Form> */}
         <div
           className="Navbar-ColLink"
           onClick={props.handleLogout}

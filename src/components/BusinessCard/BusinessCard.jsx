@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './BusinessCard.css';
 import { Card } from 'react-bootstrap';
+import './BusinessCard.css';
 
 
 const BusinessCard = (props) => {
@@ -9,7 +9,7 @@ const BusinessCard = (props) => {
     <Link to={`/${props.idx}`} className="link">
     <Card className="BusinessCard-Card">
       <Card.Img className="BusinessCard-Img" variant="top" src={props.image} alt={props.name}/>
-      <Card.Body style={{ padding: '.5rem .7rem'}} className="BusinessCard-CardBody">
+      <Card.Body className="BusinessCard-CardBody">
         <Card.Title>
           <div className="BusinessCard-StarsContainer">
             <img style={{height: '1em'}} src={props.stars[props.rating]} alt={props.rating} />
