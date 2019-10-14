@@ -106,7 +106,7 @@
   }
 
   .ShowPage-CardDetails {
-    height: auto;
+    height: 22rem;
     max-height: 25rem;
   }
 }
