@@ -61,7 +61,7 @@ class Show extends Component {
               </li>
             ))}
           </div>
-          <div className="flex-row" style={{height: '3em'}}>
+          <div className="flex-row" style={{height: '3em', marginTop: '2em'}}>
             <i className="fas fa-map-marker-alt ShowPage-Marker"></i>
             <div className="ShowPage-TextAddress">
               <span style={{height: '1.5em'}}>{this.props.data.location.display_address[0]}</span>
