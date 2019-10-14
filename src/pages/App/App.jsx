@@ -76,6 +76,15 @@ export class App extends Component {
     })
   }
 
+  handleLocation = async () => {
+    try {
+      const {lat, lng} = await getCurrentLatLng();
+      this.setState({ lat, lng })
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   handleGetPref = async () => {
     try {
       let pref = await searchPref.getPref(this.state.user._id);
@@ -149,6 +158,7 @@ export class App extends Component {
             user={this.state.user}
             results={this.state.results}
             total={this.state.total}
+            location={this.state.lat}
             preferences={this.state.preferences}
             handleSignupOrLogin={this.handleSignupOrLogin}
             handleLogout={this.handleLogout}
@@ -156,6 +166,7 @@ export class App extends Component {
             handleGetPref={this.handleGetPref}
             handleRandom={this.handleRandom}
             handleTerms={this.handleTerms}
+            handleLocation={this.handleLocation}
           />
           }/>
         <Route exact path='/:id' render={ props =>

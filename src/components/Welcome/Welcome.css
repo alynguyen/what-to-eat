@@ -1,0 +1,27 @@
+.Welcome {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Merriweather';
+  font-size: 3em;
+  justify-content: center;
+  text-align: center;
+  height: 30vh;
+  align-items: center;
+}
+
+.Welcome button {
+  width: 10rem;
+  background-color: white;
+  color: #D32332;
+  border: 1px solid #D32332;
+}
+
+.Welcome h1 {
+  margin-bottom: 3rem;
+  font-weight: bold;
+}
+
+.fa-globe-americas {
+  margin-right: .5em;
+  color: #D32332;
+}

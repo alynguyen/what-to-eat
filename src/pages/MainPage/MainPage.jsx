@@ -2,6 +2,7 @@ import React from 'react';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import NavBarC from '../../components/NavBarC/NavBarC';
 import BusinessCard from '../../components/BusinessCard/BusinessCard';
+import Welcome from '../../components/Welcome/Welcome';
 import LoadPage from '../../pages/LoadPage/LoadPage';
 import './MainPage.css'
 
@@ -27,7 +28,13 @@ const MainPage = (props) => {
         ))}
       </div>
     : 
+      props.location ?
       <div className="MainPage-Load"><LoadPage total={props.total} /></div>
+    :
+      <Welcome 
+      location={props.location}
+      handleLocation={props.handleLocation}
+      />
 
   return (
     <>
