@@ -47,6 +47,7 @@
   list-style: none;
   padding-top: .2em;
   margin-left: .2em;
+  height: auto;
 }
 
 .ShowPage-StarsContainer {
