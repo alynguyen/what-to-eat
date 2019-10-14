@@ -105,4 +105,9 @@
   .Reviews {
     margin: 0 auto;
   }
+
+  .ShowPage-CardDetails {
+    height: auto;
+    max-height: 25rem;
+  }
 }
