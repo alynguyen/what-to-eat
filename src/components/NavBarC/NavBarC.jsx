@@ -51,8 +51,8 @@ const NavBarC = (props) => {
   return (
     <div className="Navbar">
       <Navbar collapseOnSelect expand="sm" bg="light" variant="light">
-        <Navbar.Brand href="/">
-          <p className="Navbar-Logo">Hangry Games</p>
+        <Navbar.Brand>
+          <Link to='/' className="Navbar-Brand link"><p className="Navbar-Logo">Hangry Games</p></Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
