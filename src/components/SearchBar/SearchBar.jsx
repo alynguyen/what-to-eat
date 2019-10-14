@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './SearchBar.css';
 import searchPref from '../../services/searchPref';
 
@@ -39,29 +40,33 @@ class SearchBar extends Component {
     }
   }
 
-  onClick(){
-    window.location.href=`/${this.props.handleRandom()}`;
-  }
+  // onClick(){
+  //   window.location.href=`/${this.props.handleRandom()}`;
+  // }
 
   render() {
 
     let checkTotal = this.props.total ?
-      <button 
-        className="btn-custom"
-        onClick={() => this.onClick()}
-        >
-        <i className="fas fa-dice"></i>
-      </button>
+      <Link to={`/${this.props.handleRandom()}`}>
+        <button 
+          className="btn-custom"
+          // onClick={() => this.onClick()}
+          >
+          <i className="fas fa-dice"></i>
+        </button>
+        </Link>
     : <div />
 
     let checkTotalEx = this.props.total ?
-      <button 
-        className="btn-custom"
-        onClick={() => this.onClick()}
-      >
-        Choose For Me!
-      </button>
-    : <div />
+      <Link to={`/${this.props.handleRandom()}`}>
+        <button 
+          className="btn-custom"
+          // onClick={() => this.onClick()}
+        >
+          Choose For Me!
+        </button>
+      </Link>
+      : <div />
 
     let search = this.props.user ?        
        <div className="SearchBar-PrefContainer">
@@ -104,13 +109,15 @@ class SearchBar extends Component {
       </div>   
      : 
       this.props.total ?
-        <button 
-          onClick={() => this.onClick()}
-          className="SearchBar-Btn btn-custom"
-        >
-          Choose For Me!
-        </button>
-      : <div />
+        <Link to={`/${this.props.handleRandom()}`}>
+          <button 
+            // onClick={() => this.onClick()}
+            className="SearchBar-Btn btn-custom"
+          >
+            Choose For Me!
+          </button>
+        </Link>
+        : <div />
 
     return (
       <div className="SearchBar">

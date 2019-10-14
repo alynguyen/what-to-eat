@@ -28,13 +28,13 @@ const MainPage = (props) => {
         ))}
       </div>
     : 
-      // props.location ?
+      props.location ?
       <div className="MainPage-Load"><LoadPage total={props.total} /></div>
-    // :
-    //   <Welcome 
-    //   location={props.location}
-    //   handleLocation={props.handleLocation}
-    //   />
+    :
+      <Welcome 
+      location={props.location}
+      handleLocation={props.handleLocation}
+      />
 
   return (
     <>
