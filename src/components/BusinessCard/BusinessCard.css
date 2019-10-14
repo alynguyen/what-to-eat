@@ -50,6 +50,6 @@
 @media only screen and (max-width: 414px) {
   .BusinessCard-Card {
     height: auto;
-    max-height: 29rem;
+    max-height: 32rem;
   }
 }
