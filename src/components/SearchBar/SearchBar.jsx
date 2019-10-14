@@ -40,17 +40,12 @@ class SearchBar extends Component {
     }
   }
 
-  // onClick(){
-  //   window.location.href=`/${this.props.handleRandom()}`;
-  // }
-
   render() {
 
     let checkTotal = this.props.total ?
       <Link to={`/${this.props.handleRandom()}`}>
         <button 
           className="btn-custom"
-          // onClick={() => this.onClick()}
           >
           <i className="fas fa-dice"></i>
         </button>
@@ -61,7 +56,6 @@ class SearchBar extends Component {
       <Link to={`/${this.props.handleRandom()}`}>
         <button 
           className="btn-custom"
-          // onClick={() => this.onClick()}
         >
           Choose For Me!
         </button>
@@ -111,7 +105,6 @@ class SearchBar extends Component {
       this.props.total ?
         <Link to={`/${this.props.handleRandom()}`}>
           <button 
-            // onClick={() => this.onClick()}
             className="SearchBar-Btn btn-custom"
           >
             Choose For Me!
