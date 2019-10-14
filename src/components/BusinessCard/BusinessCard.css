@@ -12,6 +12,12 @@
 
 .BusinessCard-Card {
   width: 20rem;
+  margin: 1em 1em;
+}
+
+.BusinessCard-CardBody {
+  padding: .5em .7em;
+  height: 100%;
 }
 
 .BusinessCard-CatContainer {
