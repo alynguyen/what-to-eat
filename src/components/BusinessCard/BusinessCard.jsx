@@ -12,7 +12,7 @@ const BusinessCard = (props) => {
       <Card.Body style={{ padding: '.5rem .7rem'}} className="BusinessCard-CardBody">
         <Card.Title>
           <div className="BusinessCard-StarsContainer">
-            <img src={props.stars[props.rating]} alt={props.rating} />
+            <img style={{height: '1em'}} src={props.stars[props.rating]} alt={props.rating} />
             <small className="text-muted">{props.reviewCount} Reviews</small>
           </div>
         </Card.Title>

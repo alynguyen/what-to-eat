@@ -47,7 +47,7 @@ class Show extends Component {
           <div className="ShowPage-CardTitle">{this.props.data.name}</div>
           <small className="ShowPage-TextPrice">{this.props.data.price}</small>
           <div className="BusinessCard-StarsContainer">
-            <img src={this.props.stars[this.props.data.rating]} alt={this.props.data.rating} />
+            <img style={{height: '1.5em'}} src={this.props.stars[this.props.data.rating]} alt={this.props.data.rating} />
             <small className="ShowPage-TextMuted">{this.props.data.review_count} Reviews</small>
           </div>
           <div className="ShowPage-CatContainer">
