@@ -54,7 +54,7 @@ export class App extends Component {
   }
 
   async componentDidMount() {
-    const {lat, lng} = await getCurrentLatLng();
+    // const {lat, lng} = await getCurrentLatLng();
     if (this.state.user) {
       let terms = [];
       const preferences = await searchPref.getPref(this.state.user._id);
@@ -67,10 +67,10 @@ export class App extends Component {
       })
     }
 
-    const results =  await getAllYelp(lat, lng, this.state.terms);
+    const results =  await getAllYelp(this.state.lat, this.state.lng, this.state.terms);
     this.setState({
-      lat,
-      lng,
+      // lat,
+      // lng,
       results: results.businesses,
       total: results.total
     })
@@ -80,6 +80,7 @@ export class App extends Component {
     try {
       const {lat, lng} = await getCurrentLatLng();
       this.setState({ lat, lng })
+      this.componentDidMount();
     } catch (err) {
       console.log(err);
     }
