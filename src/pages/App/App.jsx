@@ -161,7 +161,7 @@ export class App extends Component {
             user={this.state.user}
             results={this.state.results}
             total={this.state.total}
-            location={this.state.lat}
+            location={this.state.lat, this.state.lng}
             preferences={this.state.preferences}
             handleSignupOrLogin={this.handleSignupOrLogin}
             handleLogout={this.handleLogout}

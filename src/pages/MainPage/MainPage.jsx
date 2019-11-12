@@ -3,6 +3,7 @@ import SearchBar from '../../components/SearchBar/SearchBar';
 import NavBarC from '../../components/NavBarC/NavBarC';
 import BusinessCard from '../../components/BusinessCard/BusinessCard';
 import Welcome from '../../components/Welcome/Welcome';
+import GoogleMapHead from '../../components/GoogleMap/GoogleMapHead';
 import LoadPage from '../../pages/LoadPage/LoadPage';
 import './MainPage.css'
 
@@ -32,8 +33,7 @@ const MainPage = (props) => {
       <div className="MainPage-Load"><LoadPage total={props.total} /></div>
     :
       <Welcome 
-      location={props.location}
-      handleLocation={props.handleLocation}
+        handleLocation={props.handleLocation}
       />
 
   return (
@@ -43,6 +43,9 @@ const MainPage = (props) => {
         user={props.user}
       />
       <header className="MainPage-Header">
+        <GoogleMapHead 
+          location={props.location}
+        />
       </header>
         <SearchBar 
           handleSignupOrLogin={props.handleSignupOrLogin}

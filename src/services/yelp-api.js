@@ -11,7 +11,7 @@ export function getAllYelp(lat, lng, terms) {
         latitude: lat,
         longitude: lng,
         term: `food, restaurants, ${terms}`,
-        radius: 5000,
+        radius: 500,
         limit: 50
       })
     })
