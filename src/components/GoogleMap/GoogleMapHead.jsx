@@ -17,7 +17,7 @@ class GoogleMap extends Component {
           google={this.props.google}
           zoom={15}
           style={mapStyles}
-          // initialCenter={{lat: this.props.location.lat, lng: this.props.location.lng}}
+          initialCenter={{lat: this.props.lat, lng: this.props.lng}}
           >
           {/* <Marker position={{lat: this.props.location.lat, lng: this.props.location.lng}} /> */}
         </Map>

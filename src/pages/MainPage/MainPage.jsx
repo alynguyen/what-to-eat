@@ -36,6 +36,14 @@ const MainPage = (props) => {
         handleLocation={props.handleLocation}
       />
 
+  let header = props.lat ?
+    <GoogleMapHead 
+      lat={props.lat}
+      lng={props.lng}
+    />
+  :
+    <LoadPage />
+
   return (
     <>
       <NavBarC 
@@ -43,9 +51,7 @@ const MainPage = (props) => {
         user={props.user}
       />
       <header className="MainPage-Header">
-        <GoogleMapHead 
-          location={props.location}
-        />
+        {header}
       </header>
         <SearchBar 
           handleSignupOrLogin={props.handleSignupOrLogin}
