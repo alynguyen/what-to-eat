@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { Marker, Map, GoogleApiWrapper } from 'google-maps-react';
-import './GoogleMap.css'
+import mapOptions from './HeaderOptions.json';
+import './GoogleMap.css';
  
 const mapStyles = {
   width: '100%',
   height: '25rem',
   padding: '5px'
+};
+
+const defaultMapOptions = {
+  styles: mapOptions
 };
 
 class GoogleMap extends Component {
@@ -15,11 +20,17 @@ class GoogleMap extends Component {
         <Map
           className="GoogleMapHead"
           google={this.props.google}
-          zoom={15}
+          zoom={17}
           style={mapStyles}
+          defaultOptions={defaultMapOptions}
           initialCenter={{lat: this.props.lat, lng: this.props.lng}}
           >
-          {/* <Marker position={{lat: this.props.location.lat, lng: this.props.location.lng}} /> */}
+          {this.props.results.map((result, idx) => (
+            <Marker 
+              key={idx}
+              position={{lat: result.coordinates.latitude, lng: result.coordinates.longitude}}
+            />
+          ))}
         </Map>
     );
   }

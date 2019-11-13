@@ -40,6 +40,7 @@ const MainPage = (props) => {
     <GoogleMapHead 
       lat={props.lat}
       lng={props.lng}
+      results={props.results}
     />
   :
     <LoadPage />
